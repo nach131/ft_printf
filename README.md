@@ -42,4 +42,4 @@ Ahí es cuando ocurre la magia: el siguiente argumento en la lista de argumentos
 	printf("%7.3f\n", pi);          	/*  3.142*/
 
 	printf("%hhd\n", ch);           	/*90 <-- ASCII code de Z */
-}
+	}
