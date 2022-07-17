@@ -11,3 +11,4 @@ a.out
 *.o
 obj/*
 libft/obj/*
+*.a
