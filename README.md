@@ -4,6 +4,7 @@
 	printf
 </h1>
  <p align="center">
+ <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/nach131/ft_printf?style=social">
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/nach131/ft_printf">
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/nach131/ft_printf">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/nach131/ft_printf">
