@@ -27,6 +27,6 @@ const char	*ft_search_arg(va_list arg, const char *format, t_print *sc);
 int			ft_intlen(int nb, char c);
 const	char	*ft_read_text(t_print *sc, const char *format);
 void		ft_print_hexa(unsigned int x);
-const char	*ft_print_s(va_list arg, t_print *tp);
+const char	*ft_print_str(va_list arg, t_print *tp);
 
 #endif
