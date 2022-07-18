@@ -2,8 +2,11 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-# include "includes/ft_printf.h"
-# include "includes/libft.h"
+// # include "ft_printf.h"
+// # include "inc/libft.h"
+
+#include "libft/inc/libft.h"
+#include "inc/ft_printf.h"
 
 int	main()
 {

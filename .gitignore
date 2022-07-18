@@ -9,6 +9,6 @@ a.out
 *.swn
 .vscode
 *.o
-obj/*
-libft/obj/*
+sources/obj/*
+sources/libft/obj/*
 *.a

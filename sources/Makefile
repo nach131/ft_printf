@@ -19,7 +19,7 @@ OBJ_DIR = obj/
 # Compilate
 
 CC= gcc
-CFLAGS = -Wall -Wextra -Werror -I
+CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
@@ -32,14 +32,10 @@ WHITE= \033[0;37m
 
 #Sources
 
-TOMA_DIR = toma/
-TOMA_SRC = ft_printf ft_intlen ft_search_arg ft_read_text
-
 PRINT_DIR = print/
 PRINT_FILES = ft_print_hexa
 
-# SRC_FILES = ft_printf ft_intlen ft_search_arg ft_read_text
-SRC_FILES += $(addprefix $(TOMA_DIR), $(TOMA_FILES))
+SRC_FILES = ft_printf ft_intlen ft_search_arg ft_read_text
 SRC_FILES += $(addprefix $(PRINT_DIR), $(PRINT_FILES))
 
 SRCS = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
@@ -47,13 +43,11 @@ OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 #Rules
 
-#OBJSF		=	.cache_exists
-
-all: DIR_NACH LIBFS $(NAME)
+all: DIR LIBFS $(NAME)
 
 tokemo:
-			@echo $(OBJ_DIR)
-			@echo $(SRC_DIR)
+			@echo $(INCLUDES)/
+			@cat $(INCLUDES)/ft_printf.h
 
 LIBFS:
 			@make -C $(LIBFT)
@@ -64,11 +58,11 @@ $(NAME) : $(OBJS)
 			@$(AR) $(NAME) $(OBJS)
 			@echo "$(GREEN)\n ✓ Creado $(NAME)\n$(WHITE)"
 
-$(OBJ_DIR)%.o : $(SRC_DIR)%.c $(INCLUDES)ft_printf.h
+$(OBJ_DIR)%.o : $(SRC_DIR)%.c $(INCLUDES)/ft_printf.h
 			@echo "$(BLUE) Compilando  ➟  $< $(WHITE)"
 			@$(CC) $(CFLAGS) -I$(INCLUDES) -Ilibft/inc -c $< -o $@
 
-DIR_NACH:
+DIR:
 			@mkdir -p $(OBJ_DIR)
 			@mkdir -p $(OBJ_DIR)$(PRINT_DIR)
 
