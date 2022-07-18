@@ -15,10 +15,15 @@ int	main()
 	// int str2 = printf("42 Barcelona\n");
 	// printf("\nstr = %d\nstr2 = %d\n", str, str2);
 
-	// printf("-------NULL------\n");
-	// int null = ft_printf("42 Barcelona %s\n", NULL);
-	// int null2 = printf("42 Barcelona %s\n", NULL);
-	// printf("\nstr = %d\nstr2 = %d\n", null, null2);
+	printf("-------NULL------\n");
+	int null = ft_printf("42 Barcelona %s\n", NULL);
+	int null2 = printf("42 Barcelona %s\n", NULL);
+	printf("\nstr = %d\nstr2 = %d\n", null, null2);
+
+	printf("-------STR------\n");
+	int str1 = ft_printf("42 Barcelona %s\n", "hola");
+	int str2 = printf("42 Barcelona %s\n", "hola");
+	printf("\nstr1 = %d\nstr2 = %d\n", str1, str2);
 
 	// printf("------HEX-------\n");
 	// int hex = ft_printf("42 Barcelona %x\n", "FLIPE");

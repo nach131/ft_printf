@@ -22,25 +22,26 @@
 
 int	ft_printf(const char *format, ...)
 {
-	t_print	sc;
+	t_print	tp;
 	va_list	arg;
 
 	va_start(arg, format);
-	sc.len = 0;
-	sc.widht = 0;
+	tp.len = 0;
+	tp.widht = 0;
+
 	while (*format)
 	{
 		if (*format == '%')
-			format = ft_search_arg(arg, format + 1, &sc);
+			format = ft_search_arg(arg, format + 1, &tp);
 		else
-			format = ft_read_text(&sc, format);
+			format = ft_read_text(&tp, format);
 		if (!format)
 		{
 			write(1, "(null)", 6);
 			va_end(arg);
-			return (sc.len);
+			return (tp.len);
 		}
 	}
 	va_end(arg);
-	return (sc.len);
+	return (tp.len);
 }

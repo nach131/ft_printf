@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_search_arg.c                                    :+:      :+:    :+:   */
+/*   ft_print_s.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 10:52:12 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/16 10:57:34 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/07/19 00:06:04 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/07/19 00:27:15 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,41 +17,18 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
+const char	*ft_print_s(va_list arg, t_print *tp)
 {
-	if (*format == 'd')
+	char	*s = va_arg(arg, char *);
+	if (!s)
 	{
-		int d = va_arg(arg, int);
-		ft_putnbr_fd(d, 1);
-		tp->len += ft_intlen(d, *format);
-		// printf("\t aqui: d %s\n", format);
-		// printf("\t aki: d %d\n", d);
-	}
-	else if (*format == 's')
-		ft_print_s(arg, tp);
-	// {
-	// 	char *s = va_arg(arg, char *);
-	// 	if (!s)
-	// 	{
-	// 		write(1, "(NULL)", 6);
-	// 		tp->len += 6;
-	// 		printf("\t AKI DOS s:\n");
-	// 	}
-	// 	else
-	// 	{
-	// 		ft_putstr_fd(s, 1);
-	// 		tp->len += ft_strlen(s);
-	// 		printf("\t AKI s: %s\n",s);
-	// 	}
-	// }
-	else if (*format == 'x')
-	{
-		unsigned int x = va_arg(arg, unsigned int);
-		ft_print_hexa(x);
-		tp->len += ft_intlen((int)x, *format);
+		write(1, "(null)", 6);
+		tp->len += 6;
 	}
 	else
-		return (NULL);
-	format++;
-	return (format);
+	{
+		ft_putstr_fd(s, 1);
+		tp->len += ft_strlen(s);
+	}
+	return (s);
 }
