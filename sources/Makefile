@@ -6,12 +6,12 @@
 #    By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/12 19:20:00 by nmota-bu          #+#    #+#              #
-#    Updated: 2022/07/12 19:37:24 by nmota-bu         ###   ########.fr        #
+#    Updated: 2022/07/18 11:34:06 by nmota-bu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-INCLUDES = includes/
+INCLUDES = inc
 LIBFT		= libft/
 SRC_DIR = src/
 OBJ_DIR = obj/
@@ -32,10 +32,14 @@ WHITE= \033[0;37m
 
 #Sources
 
+TOMA_DIR = toma/
+TOMA_SRC = ft_printf ft_intlen ft_search_arg ft_read_text
+
 PRINT_DIR = print/
 PRINT_FILES = ft_print_hexa
 
-SRC_FILES = ft_printf ft_intlen ft_search_arg ft_read_text
+# SRC_FILES = ft_printf ft_intlen ft_search_arg ft_read_text
+SRC_FILES += $(addprefix $(TOMA_DIR), $(TOMA_FILES))
 SRC_FILES += $(addprefix $(PRINT_DIR), $(PRINT_FILES))
 
 SRCS = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
@@ -43,34 +47,42 @@ OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 #Rules
 
-OBJSF		=	.cache_exists
+#OBJSF		=	.cache_exists
 
-all: $(NAME)
+all: DIR_NACH LIBFS $(NAME)
+
+tokemo:
+			@echo $(OBJ_DIR)
+			@echo $(SRC_DIR)
+
+LIBFS:
+			@make -C $(LIBFT)
 
 $(NAME) : $(OBJS)
-			@make -C $(LIBFT)
 			@cp libft/libft.a .
 			@mv libft.a $(NAME)
 			@$(AR) $(NAME) $(OBJS)
 			@echo "$(GREEN)\n ✓ Creado $(NAME)\n$(WHITE)"
 
-$(OBJ_DIR)%.o : $(SRC_DIR)%.c | $(OBJSF)
+$(OBJ_DIR)%.o : $(SRC_DIR)%.c $(INCLUDES)ft_printf.h
 			@echo "$(BLUE) Compilando  ➟  $< $(WHITE)"
-			@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+			@$(CC) $(CFLAGS) -I$(INCLUDES) -Ilibft/inc -c $< -o $@
 
-$(OBJSF):
+DIR_NACH:
 			@mkdir -p $(OBJ_DIR)
 			@mkdir -p $(OBJ_DIR)$(PRINT_DIR)
 
 clean : 
+			echo $(OBJS)
 			@$(RM) -r $(OBJ_DIR)
-			@$(RM) $(OBJSF)
+			@make clean -C $(LIBFT)
 			@echo "$(RED)\n ✗ ft_printf borrados.‼️\n$(WHITE)";
 
 fclean : clean
 			@$(RM) $(NAME)
-			@make clean -C $(LIBFT)
+			@make fclean -C $(LIBFT)
 			@$(RM) -f $(LIBFT)/libft.a
+
 			@echo "$(YELLOW) Todo Super limpito...✌🏼$(WHITE)"
 
 re: fclean all

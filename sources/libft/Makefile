@@ -6,16 +6,16 @@
 #    By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 22:10:52 by nmota-bu          #+#    #+#              #
-#    Updated: 2022/07/15 14:50:47 by nmota-bu         ###   ########.fr        #
+#    Updated: 2022/07/18 11:31:53 by nmota-bu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-INCLUDES = ../includes/
+INCLUDES = inc
 SRC_DIR = src/
 OBJ_DIR = obj/
 CC= gcc
-CFLAGS = -Wall -Wextra -Werror -I
+CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
@@ -62,33 +62,30 @@ OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 #Rules
 
-OBJSF		=	.cache_exists
+# OBJSF		=	.cache_exists
 
-all: $(NAME)
+all: DIR $(NAME)
 
 $(NAME) : $(OBJS)
 			@$(AR) $(NAME) $(OBJS)
-			@ranlib $(NAME)
+#			@ranlib $(NAME)
 			@echo "$(GREEN)\n ✓ Creado $(NAME)\n$(WHITE)"
 
-$(OBJ_DIR)%.o : $(SRC_DIR)%.c | $(OBJSF)
+$(OBJ_DIR)%.o : $(SRC_DIR)%.c $(INCLUDES)/libft.h
 			@echo "$(BLUE) Compilando  ➟  $< $(WHITE)"
-			@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+			@$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
 
-# ➤
-
-$(OBJSF):
-			@mkdir -p $(OBJ_DIR)
-			@mkdir -p $(OBJ_DIR)$(IS_DIR)
-			@mkdir -p $(OBJ_DIR)$(LST_DIR)
-			@mkdir -p $(OBJ_DIR)$(MEM_DIR)
-			@mkdir -p $(OBJ_DIR)$(PUT_DIR)
-			@mkdir -p $(OBJ_DIR)$(STR_DIR)
-			@mkdir -p $(OBJ_DIR)$(TO_DIR)
+DIR:
+			@-mkdir -p $(OBJ_DIR)
+			@-mkdir -p $(OBJ_DIR)$(IS_DIR)
+			@-mkdir -p $(OBJ_DIR)$(LST_DIR)
+			@-mkdir -p $(OBJ_DIR)$(MEM_DIR)
+			@-mkdir -p $(OBJ_DIR)$(PUT_DIR)
+			@-mkdir -p $(OBJ_DIR)$(STR_DIR)
+			@-mkdir -p $(OBJ_DIR)$(TO_DIR)
 
 clean : 
 			@$(RM) -rf $(OBJ_DIR)
-			@$(RM) -f $(OBJSF)
 			@echo "$(RED)\n ✗ Archivos objetos libft borrados.‼️\n$(WHITE)";
 
 fclean : clean
