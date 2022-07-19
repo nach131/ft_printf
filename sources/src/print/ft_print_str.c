@@ -17,18 +17,19 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-const char	*ft_print_s(va_list arg, t_print *tp)
+int	ft_print_str(va_list arg, t_print *tp)
 {
 	char	*s = va_arg(arg, char *);
 	if (!s)
 	{
 		write(1, "(null)", 6);
 		tp->len += 6;
+		return (-1);
 	}
 	else
 	{
 		ft_putstr_fd(s, 1);
 		tp->len += ft_strlen(s);
+		return (1);
 	}
-	return (s);
 }

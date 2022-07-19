@@ -33,7 +33,7 @@ WHITE= \033[0;37m
 #Sources
 
 PRINT_DIR = print/
-PRINT_FILES = ft_print_hexa ft_print_s
+PRINT_FILES = ft_print_hexa ft_print_str
 
 SRC_FILES = ft_printf ft_intlen ft_search_arg ft_read_text
 SRC_FILES += $(addprefix $(PRINT_DIR), $(PRINT_FILES))

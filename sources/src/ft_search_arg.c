@@ -28,22 +28,10 @@ const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
 		// printf("\t aki: d %d\n", d);
 	}
 	else if (*format == 's')
-		ft_print_str(arg, tp);
-	// {
-	// 	char *s = va_arg(arg, char *);
-	// 	if (!s)
-	// 	{
-	// 		write(1, "(NULL)", 6);
-	// 		tp->len += 6;
-	// 		printf("\t AKI DOS s:\n");
-	// 	}
-	// 	else
-	// 	{
-	// 		ft_putstr_fd(s, 1);
-	// 		tp->len += ft_strlen(s);
-	// 		printf("\t AKI s: %s\n",s);
-	// 	}
-	// }
+			ft_print_str(arg, tp);
+	// else if (*format == 'c')
+	// 	printf("char\n");
+	// 	// ft_print_char(arg, tp);
 	else if (*format == 'x')
 	{
 		unsigned int x = va_arg(arg, unsigned int);
