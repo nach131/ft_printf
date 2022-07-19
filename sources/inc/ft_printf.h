@@ -28,6 +28,9 @@ int			ft_intlen(int nb, char c);
 const	char	*ft_read_text(t_print *sc, const char *format);
 void		ft_print_hexa(unsigned int x);
 int	ft_print_str(va_list arg, t_print *tp);
-// int *ft_print_char(va_list arg, t_print *tp);
+// int ft_print_char(va_list arg, t_print *tp);
+int ft_print_char(va_list arg, t_print *tp);
+int	ft_print_dec(va_list arg, const char *format, t_print *tp);
+
 
 #endif

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_print_dec.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 00:06:04 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/19 00:49:05 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/07/19 19:12:40 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/07/19 19:13:51 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,10 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-int	ft_print_str(va_list arg, t_print *tp)
+int	ft_print_dec(va_list arg, const char *format, t_print *tp)
 {
-	char	*s;
-	
-	s = va_arg(arg, char *);
-	if (!s)
-	{
-		write(1, "(null)", 6);
-		tp->len += 6;
-		return (-1);
-	}
-	else
-	{
-		ft_putstr_fd(s, 1);
-		tp->len += ft_strlen(s);
+		int d = va_arg(arg, int);
+		ft_putnbr_fd(d, 1);
+		tp->len += ft_intlen(d, *format);
 		return (1);
-	}
 }

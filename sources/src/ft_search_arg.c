@@ -20,18 +20,14 @@
 const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
 {
 	if (*format == 'd')
-	{
-		int d = va_arg(arg, int);
-		ft_putnbr_fd(d, 1);
-		tp->len += ft_intlen(d, *format);
-		// printf("\t aqui: d %s\n", format);
-		// printf("\t aki: d %d\n", d);
-	}
+		ft_print_dec(arg, format, tp);
 	else if (*format == 's')
 			ft_print_str(arg, tp);
-	// else if (*format == 'c')
-	// 	printf("char\n");
-	// 	// ft_print_char(arg, tp);
+	else if (*format == 'c')
+	{	
+		// printf("\t search %c", c);
+		ft_print_char(arg, tp);
+	}
 	else if (*format == 'x')
 	{
 		unsigned int x = va_arg(arg, unsigned int);
