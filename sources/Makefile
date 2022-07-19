@@ -26,6 +26,7 @@ RM = rm -f
 # Colors
 GREEN=\033[0;32m
 BLUE=\033[0;34m
+ORANGE=\033[38;5;214m
 RED=\033[0;31m
 YELLOW = \033[0;33m
 WHITE= \033[0;37m
@@ -33,7 +34,7 @@ WHITE= \033[0;37m
 #Sources
 
 PRINT_DIR = print/
-PRINT_FILES = ft_print_hexa ft_print_str ft_print_char ft_print_dec
+PRINT_FILES = ft_print_hex ft_print_str ft_print_char ft_print_dec
 
 SRC_FILES = ft_printf ft_intlen ft_search_arg ft_read_text
 SRC_FILES += $(addprefix $(PRINT_DIR), $(PRINT_FILES))
@@ -59,7 +60,8 @@ $(NAME) : $(OBJS)
 			@echo "$(GREEN)\n ✓ Creado $(NAME)\n$(WHITE)"
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c $(INCLUDES)/ft_printf.h
-			@echo "$(BLUE) Compilando  ➟  $< $(WHITE)"
+#			@echo "$(BLUE) Compilando  ➟  $< $(WHITE)"
+			@echo "$(ORANGE) Compilando  ➟  $(BLUE)$< $(WHITE)"
 			@$(CC) $(CFLAGS) -I$(INCLUDES) -Ilibft/inc -c $< -o $@
 
 DIR:

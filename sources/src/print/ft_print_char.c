@@ -22,11 +22,11 @@ int ft_print_char(va_list arg, t_print *tp)
 		int c;
 
 	c = va_arg(arg, int);
-
 	ft_putchar_fd(c, 1);
-	tp->len += 2;
+		tp->len += 1;
 	return (1);
 }
+
 // {
 // 	int c;
 
@@ -34,12 +34,12 @@ int ft_print_char(va_list arg, t_print *tp)
 
 // 	if (write(1, &c, sizeof(char)) != sizeof(char))
 // 	{
-// 		tp->len += 1;
+// 		tp->len += ft_strlen(format);
 // 		return (-1);
 // 	} 
 // 	else
 // 	{
-// 		tp->len += 2;
+// 		tp->len += ft_strlen(format);
 // 		return (1);
 // 	} 
 // }
@@ -50,14 +50,14 @@ int ft_print_char(va_list arg, t_print *tp)
 // 	c = va_arg(arg, int);
 // 	if(!c)
 // 	{
-// 		tp->len += 1;
+// 		tp->len += ft_strlen(format);
 // 		return (-1);
 // 	} 
 // 	else
 // 	{
-// 		// ft_putchar_fd(c, 1);
-// 		write(1, &c, 1);
-// 		tp->len += 2;
+// 		ft_putchar_fd(c, 1);
+// 		// write(1, &c, 1);
+// 		tp->len += ft_strlen(format);
 // 		return (1);
 // 	}
 // }

@@ -22,6 +22,7 @@ RM = rm -f
 # Colors
 GREEN=\033[0;32m
 BLUE=\033[0;34m
+ORANGE=\033[38;5;214m
 RED=\033[0;31m
 YELLOW = \033[0;33m
 WHITE= \033[0;37m
@@ -72,7 +73,7 @@ $(NAME) : $(OBJS)
 			@echo "$(GREEN)\n ✓ Creado $(NAME)\n$(WHITE)"
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c $(INCLUDES)/libft.h
-			@echo "$(BLUE) Compilando  ➟  $< $(WHITE)"
+			@echo "$(ORANGE) Compilando  ➟  $(BLUE)$< $(WHITE)"
 			@$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
 
 DIR:

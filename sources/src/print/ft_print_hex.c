@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hexa.c                                    :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 10:28:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/16 10:49:34 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/07/19 19:31:51 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/07/19 19:47:24 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-void	ft_print_hexa(unsigned int x)
+int	ft_print_hex(va_list arg, const char *format, t_print *tp)
 {
+	unsigned int x = va_arg(arg, unsigned int);
+
 	char	*hexa;
 	int		res[100];
 	int		i;
@@ -37,4 +39,7 @@ void	ft_print_hexa(unsigned int x)
 		ft_putchar_fd(res[i], 1);
 		i--;
 	}
+
+	tp->len += ft_intlen((int)x, *format);
+	return (1);
 }
