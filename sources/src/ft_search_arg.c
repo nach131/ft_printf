@@ -19,7 +19,7 @@
 
 const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
 {
-	if (*format == 'd')
+	if (*format == 'd' || *format == 'i')
 		ft_print_dec(arg, format, tp);
 	else if (*format == 's')
 			ft_print_str(arg, tp);

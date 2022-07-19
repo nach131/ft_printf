@@ -7,6 +7,7 @@
 
 #include "libft/inc/libft.h"
 #include "inc/ft_printf.h"
+#include <limits.h>
 
 int	main()
 {
@@ -20,15 +21,15 @@ int	main()
 	// int str2 = printf("42 Barcelona %s\n", "hola");
 	// printf("\nstr1 = %d\nstr2 = %d\n", str1, str2);
 
-	printf("-------	Char------\n");
-	int char1 = ft_printf("%c\n", '@');
-	int char2 = printf("%c\n", 'Z');
-	printf("\nchar1 = %d\nchar2 = %d\n", char1, char2);
+	// printf("-------	Char------\n");
+	// int char1 = ft_printf("%c\n", '@');
+	// int char2 = printf("%c\n", 'Z');
+	// printf("\nchar1 = %d\nchar2 = %d\n", char1, char2);
 
-	printf("-------	%% ------\n");
-	int centa1 = ft_printf("%%\n");
-	int centa2 = printf("%%\n");
-	printf("\ncenta1 = %d\ncenta2 = %d\n", centa1, centa2);
+	// printf("-------	%% ------\n");
+	// int centa1 = ft_printf("%%\n");
+	// int centa2 = printf("%%\n");
+	// printf("\ncenta1 = %d\ncenta2 = %d\n", centa1, centa2);
 
 	// printf("-------	Char------\n");
 	// int char1 = ft_printf("%c\n", NULL);
@@ -40,9 +41,15 @@ int	main()
 	// int hex2 = printf("%x\n", 4779);
 	// printf("\nhex1 = %d\nhex2 = %d\n", hex1, hex2);
 
-	// printf("------Decimal-------\n");
-	// int num = ft_printf("42 Barcelona %d\n", 42);
-	// int num2 = printf("42 Barcelona %d\n", 42);
+	printf("------Integer-------\n");
+	int int1 = ft_printf("%i\n", INT_MIN);
+	int int2 = printf("%i\n", INT_MIN);
+	printf("\nint1 = %d\nint2 = %d\n", int1, int2);
+	printf(" %i %i %i %i %i %i %i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+
+	// 	printf("------Decimal-------\n");
+	// int num = ft_printf("42 Barcelona %d\n", -42);
+	// int num2 = printf("42 Barcelona %d\n", -42);
 	// printf("\nstr = %d\nstr2 = %d\n", num, num2);
 
 	// printf("-----Dos Decimal--------\n");

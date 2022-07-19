@@ -35,7 +35,7 @@ int	ft_intlen(int nb, char c)
 		neg = 0;
 		number = nb;
 	}
-	if (c == 'd')
+	if (c == 'd' || c == 'i')
 	{
 		while (number)
 		{
