@@ -20,7 +20,7 @@
 const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
 {
 	if (*format == 'd' || *format == 'i')
-		ft_print_dec(arg, format, tp);
+		ft_print_dec(arg, tp);
 	else if (*format == 's')
 			ft_print_str(arg, tp);
 	else if (*format == 'c')
@@ -31,13 +31,7 @@ const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
 				tp->len += 1;
 		}
 	else if (*format == 'x')
-	{
-		ft_print_hex(arg, format, tp);
-		// unsigned int x = va_arg(arg, unsigned int);
-		// ft_print_hexa(x);
-		// tp->len += ft_intlen((int)x, *format);
-
-	}
+		ft_print_hex(arg, tp);
 	else
 		return (NULL);
 	format++;

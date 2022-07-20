@@ -35,15 +35,15 @@ int	ft_intlen(int nb, char c)
 		neg = 0;
 		number = nb;
 	}
-	if (c == 'd' || c == 'i')
-	{
-		while (number)
-		{
-			number /= 10;
-			i++;
-		}
-		return (i + neg);
-	}
+	// if (c == 'd' || c == 'i')
+	// {
+	// 	while (number)
+	// 	{
+	// 		number /= 10;
+	// 		i++;
+	// 	}
+	// 	return (i + neg);
+	// }
 	if (c == 'x')
 	{
 		while (number)

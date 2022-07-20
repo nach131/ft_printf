@@ -24,12 +24,14 @@ typedef struct s_print
 
 int			ft_printf(const char *format, ...);
 const char	*ft_search_arg(va_list arg, const char *format, t_print *sc);
-int			ft_intlen(int nb, char c);
+// int			ft_intlen(int nb, char c);
 const	char	*ft_read_text(t_print *sc, const char *format);
 int	ft_print_str(va_list arg, t_print *tp);
 int ft_print_char(va_list arg, t_print *tp);
-int	ft_print_dec(va_list arg, const char *format, t_print *tp);
-int	ft_print_hex(va_list arg, const char *format, t_print *tp);
+// int	ft_print_dec(va_list arg, const char *format, t_print *tp);
+int	ft_print_dec(va_list arg, t_print *tp);
+// int	ft_print_hex(va_list arg, const char *format, t_print *tp);
+int	ft_print_hex(va_list arg, t_print *tp);
 
 
 #endif

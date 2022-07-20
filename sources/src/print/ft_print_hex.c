@@ -17,13 +17,14 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-int	ft_print_hex(va_list arg, const char *format, t_print *tp)
+int	ft_print_hex(va_list arg, t_print *tp)
 {
 	unsigned int x = va_arg(arg, unsigned int);
 
 	char	*hexa;
-	int		res[100];
+	int		res[128];
 	int		i;
+	int		count;
 
 	hexa = "0123456789abcdef";
 	i = 0;
@@ -34,12 +35,13 @@ int	ft_print_hex(va_list arg, const char *format, t_print *tp)
 		i++;
 	}
 	res[i] = hexa[x];
+	count = 0;
 	while (i >= 0)
 	{
 		ft_putchar_fd(res[i], 1);
 		i--;
+		count++;
 	}
-
-	tp->len += ft_intlen((int)x, *format);
+	tp->len += count;
 	return (1);
 }
