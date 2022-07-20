@@ -30,5 +30,6 @@ int			ft_print_hex_x(va_list arg, t_print *tp);
 int			ft_print_char(va_list arg, t_print *tp);
 int			ft_print_dec(va_list arg, t_print *tp);
 int			ft_print_str(va_list arg, t_print *tp);
+int			ft_print_unsint(va_list arg, t_print *tp);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/12 19:20:00 by nmota-bu          #+#    #+#              #
-#    Updated: 2022/07/18 11:34:06 by nmota-bu         ###   ########.fr        #
+#    Updated: 2022/07/20 18:10:35 by nmota-bu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ WHITE= \033[0;37m
 #Sources
 
 PRINT_DIR = print/
-PRINT_FILES = ft_print_hex_x ft_print_hex_xx ft_print_str ft_print_char ft_print_dec
+PRINT_FILES = ft_print_hex_x ft_print_hex_xx ft_print_str ft_print_char \
+			  ft_print_dec ft_print_unsint
 
 SRC_FILES = ft_printf ft_search_arg ft_read_text
 SRC_FILES += $(addprefix $(PRINT_DIR), $(PRINT_FILES))

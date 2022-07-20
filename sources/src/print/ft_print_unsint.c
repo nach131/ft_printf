@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_search_arg.c                                    :+:      :+:    :+:   */
+/*   ft_print_unsint.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 10:52:12 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/20 17:26:32 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/07/20 18:06:57 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/07/20 20:26:50 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,57 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "ft_printf.h"
 #include "libft.h"
+#include "ft_printf.h"
 
-const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
+static int	ft_numlen(unsigned int nb)
 {
-	if (*format == 'd' || *format == 'i')
-		ft_print_dec(arg, tp);
-	else if (*format == 's')
-		ft_print_str(arg, tp);
-	else if (*format == 'c')
-		ft_print_char(arg, tp);
-	else if (*format == '%')
+	int	len;
+
+	len = 0;
+	while (nb != 0)
 	{
-		write(1, "%", 1);
-		tp->len += 1;
+		len++;
+		nb /= 10;
 	}
-	else if (*format == 'x')
-		ft_print_hex_x(arg, tp);
-	else if (*format == 'X')
-		ft_print_hex_xx(arg, tp);
-	else if (*format == 'u')
-		ft_print_unsint(arg, tp);
-	else
-		return (NULL);
-	format++;
-	return (format);
+	return (len);
 }
+
+static char *ft_unsing_itoa(unsigned long nb)
+{
+	int	len;
+	char	*num;
+	len = ft_numlen(nb);
+	num = (char *)ft_calloc((len +1), sizeof(char));
+	if (!num)
+		return (NULL);
+	num[len] = '\0';
+	while (nb != 0)
+	{
+		num[len -1] = nb % 10 + '0';
+		nb /= 10;
+		len--;
+	}
+	return (num);
+}
+
+int	ft_print_unsint(va_list arg, t_print *tp)
+{
+	char *num;
+	unsigned long	u;
+	u = va_arg(arg, unsigned long);
+	num = ft_unsing_itoa(u);
+
+// printf("dos %s\n", num);
+	ft_putstr_fd(num, 1);
+	tp->len += ft_strlen(num);
+	free(num);
+	return (1);
+}
+
+	// printf("aki: %lu\n",(unsigned long) u);
+
+	// unsigned int	x = 4294967295;
+
+  // printf("UINT_MAX    :   %u\n", (unsigned int) x);
+
