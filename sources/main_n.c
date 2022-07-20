@@ -41,6 +41,11 @@ int	main()
 	int hex2 = printf("%x\n", 4779);
 	printf("\nhex1 = %d\nhex2 = %d\n", hex1, hex2);
 
+	printf("------HEX- X-----\n");
+	int hex3 = ft_printf("%X\n", 4779);
+	int hex4 = printf("%X\n", 4779);
+	printf("\nhex3 = %d\nhex4 = %d\n", hex3, hex4);
+
 	// printf("------Integer-------\n");
 	// int int1 = ft_printf("%i\n", INT_MIN);
 	// int int2 = printf("%i\n", INT_MIN);

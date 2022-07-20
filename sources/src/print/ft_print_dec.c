@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 19:12:40 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/20 14:53:30 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2022/07/20 17:50:58 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 
 int	ft_intlen_dec(int nb)
 {
-	int i;
-	int number;
-	int neg;
+	int	i;
+	int	number;
+	int	neg;
 
 	i = 0;
 	if (!nb)
@@ -36,19 +36,21 @@ int	ft_intlen_dec(int nb)
 		neg = 0;
 		number = nb;
 	}
-		while (number)
-		{
-			number /= 10;
-			i++;
-		}
-		return (i + neg);
+	while (number)
+	{
+		number /= 10;
+		i++;
+	}
+	return (i + neg);
 	return (0);
 }
 
 int	ft_print_dec(va_list arg, t_print *tp)
 {
-		int d = va_arg(arg, int);
-		ft_putnbr_fd(d, 1);
-		tp->len += ft_intlen_dec(d);
-		return (1);
+	int	d;
+
+	d = va_arg(arg, int);
+	ft_putnbr_fd(d, 1);
+	tp->len += ft_intlen_dec(d);
+	return (1);
 }

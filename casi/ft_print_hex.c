@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.c                                             :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 19:23:00 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/15 19:23:02 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/07/19 19:31:51 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/07/20 17:29:54 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,34 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-void	file(char *sr)
+int	ft_print_hex(va_list arg, const char *format, t_print *tp)
 {
-	int	len;
+	unsigned	int x;
+	char		*hexa;
+	int			res[128];
+	int			i;
+	int			count;
 
-	len = strlen(sr);
-	printf("%s, tiene %d char\n", sr, len);
+	x = va_arg(arg, unsigned int);
+	if (*format == 'x')
+		hexa = "0123456789abcdef";
+	else if (*format == 'X')
+		hexa = "0123456789ABCDEF";
+	i = 0;
+	while (x >= 16)
+	{
+		res[i] = hexa[x % 16];
+		x = x / 16;
+		i++;
+	}
+	res[i] = hexa[x];
+	count = 0;
+	while (i >= 0)
+	{
+		ft_putchar_fd(res[i], 1);
+		i--;
+		count++;
+	}
+	tp->len += count;
+	return (1);
 }
-
-// int main(void){
-// 	int x = 42;
-// 	printf("%05d\n", x);
-// 	file("42 Barcelona");
-// }

@@ -20,7 +20,7 @@
 int	ft_print_str(va_list arg, t_print *tp)
 {
 	char	*s;
-	
+
 	s = va_arg(arg, char *);
 	if (!s)
 	{

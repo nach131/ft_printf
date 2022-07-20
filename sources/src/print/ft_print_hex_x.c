@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*   ft_print_hex_x.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 19:31:51 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/19 19:47:24 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2022/07/20 17:45:59 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-int	ft_print_hex(va_list arg, t_print *tp)
+int	ft_print_hex_x(va_list arg, t_print *tp)
 {
-	unsigned int x = va_arg(arg, unsigned int);
+	unsigned int	x;
+	char			*hexa;
+	int				res[128];
+	int				i;
+	int				count;
 
-	char	*hexa;
-	int		res[128];
-	int		i;
-	int		count;
-
-	hexa = "0123456789abcdef";
+	x = va_arg(arg, unsigned int);
+		hexa = "0123456789abcdef";
 	i = 0;
 	while (x >= 16)
 	{
