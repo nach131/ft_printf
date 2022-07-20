@@ -42,8 +42,8 @@ int	main()
 	printf("\nuns1 = %d\nuns2 = %d\n", uns1, uns2);
 
 	printf("------Decimal Unsigned Plus-------\n");
-	int uns_1 = ft_printf("%u\n", (unsigned int) 4294967296);
-	int uns_2 = printf("%u\n", (unsigned int) 4294967296);
+	int uns_1 = ft_printf("%u\n", (unsigned int) 4294967297);
+	int uns_2 = printf("%u\n", (unsigned int) 4294967297);
 	printf("\nuns_1 = %d\nuns_2 = %d\n", uns_1, uns_2);
 
 	// printf("------HEX-------\n");
