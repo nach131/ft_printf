@@ -26,7 +26,6 @@ int	ft_print_hex_x(va_list arg, t_print *tp)
 	int				count;
 
 	x = va_arg(arg, unsigned int);
-	printf("x %d\n", x);
 	hexa = "0123456789abcdef";
 	i = 0;
 	while (x >= 16)
