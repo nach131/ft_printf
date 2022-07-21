@@ -17,14 +17,14 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-static void	u_itoa_hex(unsigned int nbr, t_print *tp)
+static void	ft_u_itoa_hex(unsigned int nbr, t_print *tp)
 {
 	int	i;
 
 	i = 0;
 	if (nbr > 9)
 	{
-		u_itoa_hex(nbr / 10, tp);
+		ft_u_itoa_hex(nbr / 10, tp);
 		ft_putchar_fd(nbr % 10 + '0', 1);
 		i++;
 		tp->len += i;
@@ -38,7 +38,7 @@ int	ft_print_unsint(va_list arg, t_print *tp)
 	unsigned long 	nbr;
 	
 	nbr = va_arg(arg, unsigned int );
-	u_itoa_hex(nbr, tp);
+	ft_u_itoa_hex(nbr, tp);
 
 	tp->len += 1;
 	return (1);
