@@ -22,7 +22,7 @@ static void	ft_ptr_itoa_hex(unsigned long long nbr, t_print *tp)
 	int	i;
 
 	i = 0;
-	if (nbr > 16)
+	if (nbr > 15)
 	{
 		ft_ptr_itoa_hex(nbr / 16, tp);
 		ft_ptr_itoa_hex(nbr % 16, tp);

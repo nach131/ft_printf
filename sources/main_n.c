@@ -53,10 +53,14 @@ int	main()
 
 
 	printf("------Puntero-------\n");
-	int ptr1 = ft_printf("%p\n", (void *) 'A');
-	int ptr2 = printf("%p\n", (void *) 'A');
+	int ptr1 = ft_printf("%p\n", (void *) "");
+	int ptr2 = printf("%p\n", (void *) "");
 	printf("\nptr1 = %d\nptr2 = %d\n", ptr1, ptr2);
 
+	printf("------Puntero-------\n");
+	int ptr_1 = ft_printf(" %p\n", 16);
+	int ptr_2 = printf(" %p\n", 16);
+	printf("\nptr_1 = %d\nptr_2 = %d\n", ptr_1, ptr_2);
 
   // printf("UINT_MAX    :   %u\n", (unsigned int) UINT_MAX);
 
