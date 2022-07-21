@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_search_arg.c                                    :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 10:52:12 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/20 17:26:32 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/07/21 16:36:02 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/07/21 16:37:57 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,35 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
+static void	ft_ptr_itoa_hex(unsigned long long nbr, t_print *tp)
 {
-	if (*format == 'd' || *format == 'i')
-		ft_print_dec(arg, tp);
-	else if (*format == 's')
-		ft_print_str(arg, tp);
-	else if (*format == 'c')
-		ft_print_char(arg, tp);
-	else if (*format == '%')
+	int	i;
+
+	i = 0;
+	if (nbr > 16)
 	{
-		write(1, "%", 1);
-		tp->len += 1;
+		ft_ptr_itoa_hex(nbr / 16, tp);
+		ft_ptr_itoa_hex(nbr % 16, tp);
+		i++;
+		tp->len += i;
 	}
-	else if (*format == 'x')
-		ft_print_hex_x(arg, tp);
-	else if (*format == 'X')
-		ft_print_hex_xx(arg, tp);
-	else if (*format == 'u')
-		ft_print_unsint(arg, tp);
-	else if (*format == 'p')
-		ft_print_ptr(arg, tp);
 	else
-		return (NULL);
-	format++;
-	return (format);
+	{
+		if (nbr <= 9)
+			ft_putchar_fd(nbr + '0', 1);
+		else
+			ft_putchar_fd(nbr - 10 + 'a', 1);
+	}
+}
+
+
+int	ft_print_ptr(va_list arg, t_print *tp)
+{
+	unsigned long long 	nbr;
+	
+	nbr = va_arg(arg, unsigned long long );
+	write(1, "0x", 2);
+	ft_ptr_itoa_hex(nbr, tp);
+	tp->len += 3;
+	return (1);
 }

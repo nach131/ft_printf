@@ -36,20 +36,27 @@ int	main()
 	// int char2 = printf("%c\n", NULL);
 	// printf("\nchar1 = %d\nchar2 = %d\n", char1, char2);
 
-	printf("------Decimal Unsigned-------\n");
-	int uns1 = ft_printf("%u\n", (unsigned int) 4294967295);
-	int uns2 = printf("%u\n", (unsigned int) 4294967295);
-	printf("\nuns1 = %d\nuns2 = %d\n", uns1, uns2);
+	// printf("------Decimal Unsigned-------\n");
+	// int uns1 = ft_printf("%u\n", (unsigned int) 4294967295);
+	// int uns2 = printf("%u\n", (unsigned int) 4294967295);
+	// printf("\nuns1 = %d\nuns2 = %d\n", uns1, uns2);
 
-	printf("------Decimal Unsigned Plus-------\n");
-	int uns_1 = ft_printf("%u\n", LONG_MAX);
-	int uns_2 = printf("%u\n", LONG_MAX);
-	printf("\nuns_1 = %d\nuns_2 = %d\n", uns_1, uns_2);
+	// printf("------Decimal Unsigned Plus-------\n");
+	// int uns_1 = ft_printf("%u\n", LONG_MAX);
+	// int uns_2 = printf("%u\n", LONG_MAX);
+	// printf("\nuns_1 = %d\nuns_2 = %d\n", uns_1, uns_2);
 
 	// printf("------HEX-------\n");
 	// int hex1 = ft_printf("%x\n", "42 Barcelona");
 	// int hex2 = printf("%x\n", "42 Barcelona");
 	// printf("\nhex1 = %d\nhex2 = %d\n", hex1, hex2);
+
+
+	printf("------Puntero-------\n");
+	int ptr1 = ft_printf("%p\n", (void *) 'A');
+	int ptr2 = printf("%p\n", (void *) 'A');
+	printf("\nptr1 = %d\nptr2 = %d\n", ptr1, ptr2);
+
 
   // printf("UINT_MAX    :   %u\n", (unsigned int) UINT_MAX);
 
