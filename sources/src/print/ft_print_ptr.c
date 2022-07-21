@@ -38,11 +38,10 @@ static void	ft_ptr_itoa_hex(unsigned long long nbr, t_print *tp)
 	}
 }
 
-
 int	ft_print_ptr(va_list arg, t_print *tp)
 {
-	unsigned long long 	nbr;
-	
+	unsigned long long	nbr;
+
 	nbr = va_arg(arg, unsigned long long );
 	write(1, "0x", 2);
 	ft_ptr_itoa_hex(nbr, tp);

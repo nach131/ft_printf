@@ -46,28 +46,28 @@ int	main()
 	// int uns_2 = printf("%u\n", LONG_MAX);
 	// printf("\nuns_1 = %d\nuns_2 = %d\n", uns_1, uns_2);
 
-	// printf("------HEX-------\n");
-	// int hex1 = ft_printf("%x\n", "42 Barcelona");
-	// int hex2 = printf("%x\n", "42 Barcelona");
-	// printf("\nhex1 = %d\nhex2 = %d\n", hex1, hex2);
+	printf("------HEX-------\n");
+	int hex1 = ft_printf("%x\n", "42 Barcelona");
+	int hex2 = printf("%x\n", "42 Barcelona");
+	printf("\nhex1 = %d\nhex2 = %d\n", hex1, hex2);
 
+	printf("------HEX- X-----\n");
+	int hex3 = ft_printf("%X\n", 42);
+	int hex4 = printf("%X\n", 42);
+	printf("\nhex3 = %d\nhex4 = %d\n", hex3, hex4);
 
-	printf("------Puntero-------\n");
-	int ptr1 = ft_printf("%p\n", (void *) "");
-	int ptr2 = printf("%p\n", (void *) "");
-	printf("\nptr1 = %d\nptr2 = %d\n", ptr1, ptr2);
+	// printf("------Puntero-------\n");
+	// int ptr1 = ft_printf("%p\n", (void *) "");
+	// int ptr2 = printf("%p\n", (void *) "");
+	// printf("\nptr1 = %d\nptr2 = %d\n", ptr1, ptr2);
 
-	printf("------Puntero-------\n");
-	int ptr_1 = ft_printf(" %p\n", 16);
-	int ptr_2 = printf(" %p\n", 16);
-	printf("\nptr_1 = %d\nptr_2 = %d\n", ptr_1, ptr_2);
+	// printf("------Puntero-------\n");
+	// int ptr_1 = ft_printf(" %p\n", 16);
+	// int ptr_2 = printf(" %p\n", 16);
+	// printf("\nptr_1 = %d\nptr_2 = %d\n", ptr_1, ptr_2);
 
   // printf("UINT_MAX    :   %u\n", (unsigned int) UINT_MAX);
 
-	// printf("------HEX- X-----\n");
-	// int hex3 = ft_printf("%X\n", 42);
-	// int hex4 = printf("%X\n", 42);
-	// printf("\nhex3 = %d\nhex4 = %d\n", hex3, hex4);
 
 	// printf("------Integer-------\n");
 	// int int1 = ft_printf("%i\n", INT_MIN);

@@ -17,7 +17,7 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-int	ft_intlen_dec(int nb)
+static int	ft_intlen_dec(int nb)
 {
 	int	i;
 	int	number;
