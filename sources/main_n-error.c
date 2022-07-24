@@ -16,10 +16,13 @@ int	main()
 // 	printf("fallo: %d\n", write(1, 'z',1));
 // 	ft_printf("fallo mio: %d\n", write(1, 'z',1));
 
-	printf("-------	%% ------\n");
-	int centa1 = ft_printf("%''");
-	int centa2 = printf("%''");
-	printf("\ncenta1 = %d\ncenta2 = %d\n", centa1, centa2);
+	// printf("------'' CONTROLADO ------\n");
+	// int centa1 = ft_printf("%''");
+	// int centa2 = printf("%''");
+	// printf("\ncenta1 = %d\ncenta2 = %d\n", centa1, centa2);
+
+//===========================================================================================
+
 
 
 	// printf("-------NULL------\n");
@@ -32,10 +35,11 @@ int	main()
 	// int str2 = printf("42 Barcelona %s\n", "hola");
 	// printf("\nstr1 = %d\nstr2 = %d\n", str1, str2);
 
-	// printf("-------	%% ------\n");
-	// int centa1 = ft_printf("%%\n");
-	// int centa2 = printf("%%\n");
-	// printf("\ncenta1 = %d\ncenta2 = %d\n", centa1, centa2);
+	printf("-------	%% ------\n");
+	int centa1 = ft_printf("%aa\n");
+	printf("centa1 = %d\n", centa1);
+	int centa2 = printf("%aa\n");
+	printf("centa2 = %d\n", centa2);
 
 	// printf("-------	Char------\n");
 	// int char1 = ft_printf("%c\n", NULL);
@@ -52,10 +56,10 @@ int	main()
 	// int uns_2 = printf("%u\n", LONG_MAX);
 	// printf("\nuns_1 = %d\nuns_2 = %d\n", uns_1, uns_2);
 
-	// printf("------HEX-------\n");
-	// int hex1 = ft_printf("%x\n", "42 Barcelona");
-	// int hex2 = printf("%x\n", "42 Barcelona");
-	// printf("\nhex1 = %d\nhex2 = %d\n", hex1, hex2);
+	printf("------HEX-------\n");
+	int hex1 = ft_printf("%x\n", "a");
+	int hex2 = printf("%x\n", "a");
+	printf("\nhex1 = %d\nhex2 = %d\n", hex1, hex2);
 
 	// printf("------HEX- X-----\n");
 	// int hex3 = ft_printf("%X\n", 42);

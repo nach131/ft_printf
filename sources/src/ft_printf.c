@@ -36,7 +36,8 @@ int	ft_printf(const char *format, ...)
 			format = ft_read_text(&tp, format);
 		if (!format)
 		{
-			write(1, "(null)", 6);
+			if(write(1, "(null)", 6) == -1)
+				return (-1);
 			va_end(arg);
 			return (tp.len);
 		}
@@ -44,3 +45,4 @@ int	ft_printf(const char *format, ...)
 	va_end(arg);
 	return (tp.len);
 }
+
