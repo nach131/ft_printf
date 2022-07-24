@@ -32,6 +32,11 @@ int	ft_printf(const char *format, ...)
 	{
 		if (*format == '%')
 			format = ft_search_arg(arg, format + 1, &tp);
+		else if (tp.len == -1)
+		{
+			va_end(arg);
+			return (-1);
+		}
 		else
 			format = ft_read_text(&tp, format);
 		if (!format)

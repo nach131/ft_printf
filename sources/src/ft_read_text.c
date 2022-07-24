@@ -28,7 +28,10 @@ const	char	*ft_read_text(t_print *tp, const char *format)
 		tp->widht = ft_strlen(format);
 	// write(1, format, tp->widht);
 		if (write(1, format, tp->widht) == -1)
+			{
 			tp->len = -1;
+			return (format);
+			}
 	tp->len += tp->widht;
 	while (*format && *format != '%')
 		++format;
