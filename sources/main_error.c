@@ -35,11 +35,18 @@ int	main()
 	// int str2 = printf("42 Barcelona %s\n", "hola");
 	// printf("\nstr1 = %d\nstr2 = %d\n", str1, str2);
 
+	// printf("-------	%% ------\n");
+	// int centa1 = ft_printf("%aa\n");
+	// printf("centa1 = %d\n", centa1);
+	// int centa2 = printf("%aa\n");
+	// printf("centa2 = %d\n", centa2);
+
 	printf("-------	%% ------\n");
-	int centa1 = ft_printf("%aa\n");
+	int centa1 = ft_printf("%a\n");
 	printf("centa1 = %d\n", centa1);
-	int centa2 = printf("%aa\n");
+	int centa2 = printf("%a\n");
 	printf("centa2 = %d\n", centa2);
+
 
 	// printf("-------	Char------\n");
 	// int char1 = ft_printf("%c\n", NULL);
@@ -56,10 +63,10 @@ int	main()
 	// int uns_2 = printf("%u\n", LONG_MAX);
 	// printf("\nuns_1 = %d\nuns_2 = %d\n", uns_1, uns_2);
 
-	printf("------HEX-------\n");
-	int hex1 = ft_printf("%x\n", "a");
-	int hex2 = printf("%x\n", "a");
-	printf("\nhex1 = %d\nhex2 = %d\n", hex1, hex2);
+	// printf("------HEX-------\n");
+	// int hex1 = ft_printf("%x\n", "a");
+	// int hex2 = printf("%x\n", "a");
+	// printf("\nhex1 = %d\nhex2 = %d\n", hex1, hex2);
 
 	// printf("------HEX- X-----\n");
 	// int hex3 = ft_printf("%X\n", 42);

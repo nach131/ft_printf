@@ -27,7 +27,7 @@ const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
 		ft_print_char(arg, tp);
 	else if (*format == '%')
 	{ 
-		if (write(1, "%", 1) == -1)
+		if (write(1, "%", 1) != 1)
 			tp->len = -1;
 		tp->len += 1;
 	}
