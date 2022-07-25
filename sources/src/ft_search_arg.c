@@ -17,6 +17,30 @@
 #include "ft_printf.h"
 #include "libft.h"
 
+
+
+int	ft_write(int fd, const char *c, int p_len, t_print *tp)
+{
+	int len;
+
+	len = 0;
+	if(!tp->err)
+	{
+		 len = write(fd, c, p_len);
+		 if(len == -1)
+		 {
+		 			tp->err = 1;
+					return(-1);
+		 }
+		 tp->len = len;
+		 return(len);
+		 
+	}
+	return(0);
+}
+
+
+
 const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
 {
 	if (*format == 'd' || *format == 'i')
@@ -27,8 +51,10 @@ const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
 		ft_print_char(arg, tp);
 	else if (*format == '%')
 	{ 
-		ft_write('%', tp);
-		// tp->len += 1;
+		// ft_write('%', tp);
+		ft_write(1, "%", 1, tp);
+		// if (tp->len == -1)
+		// 	return (NULL);
 	}
 	// { 
 	// 	if (write(1, "%", 1) == -1)

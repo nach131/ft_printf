@@ -21,7 +21,8 @@ void	ft_write(char c, t_print *tp)
 {
 //// AKI ES EL KIT
 
-	if (write(1, &c, sizeof(char)) != sizeof(char))
+	// if (write(1, &c, sizeof(char)) != sizeof(char))
+	if (write(1, &c, 1) == -1)
 		tp->len = -1;
 	else
 		tp->len += 1;

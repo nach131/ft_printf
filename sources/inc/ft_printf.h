@@ -20,6 +20,7 @@ typedef struct s_print
 {
 	int	len;
 	int	widht;
+	int	err;
 }	t_print;
 
 const char	*ft_search_arg(va_list arg, const char *format, t_print *sc);
@@ -31,6 +32,6 @@ int			ft_print_dec(va_list arg, t_print *tp);
 int			ft_print_str(va_list arg, t_print *tp);
 int			ft_print_ptr(va_list arg, t_print *tp);
 int			ft_printf(const char *format, ...);
-void	ft_write(char c, t_print *tp);
+// void	ft_write(char c, t_print *tp);
 
 #endif
