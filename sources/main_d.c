@@ -23,9 +23,9 @@
 int	main()
 {
 	printf("-------	%% ------\n");
-	int centa1 = ft_printf("%%%%%%\n");
+	int centa1 = ft_printf("%%\n");
 	printf("centa1 = %d\n", centa1);
-	int centa2 = printf("%%%%%%\n");
+	int centa2 = printf("%%\n");
 	printf("centa2 = %d\n", centa2);
 }
 

@@ -20,8 +20,34 @@
 void	ft_write(char c, t_print *tp)
 {
 //// AKI ES EL KIT
+int	toma;
 
-	if (write(1, &c, 1) != 1)
-		tp->len = -1;
+toma = 0;
+
+
+if (toma == 0)
+	{
+		if (write(1, &c, 1) == 1)
+		{
+			// toma = 1;
+			tp->len += 1;
+			toma = 1;
+		}
+	}
+else
+{	
+	toma = -1;
+	tp->len = -1;
+	}
+
+// while (toma == 0)
+// 	{
+// 		toma = write(1, &c, 1);
+// 	}
+// if (toma == 1)
+// 	write(1, &c, 1);
+// 	tp->len += 1;
+// if (toma == -1)
+// 	tp->len = -1;
 }
 

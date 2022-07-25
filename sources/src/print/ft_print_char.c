@@ -22,8 +22,8 @@ int	ft_print_char(va_list arg, t_print *tp)
 	int	c;
 
 	c = va_arg(arg, int);
-	// ft_putchar_fd(c, 1);
-	ft_write(c, tp);
+	ft_putchar_fd(c, 1);
+	// ft_write(c, tp);
 		tp->len += 1;
 	return (1);
 }
