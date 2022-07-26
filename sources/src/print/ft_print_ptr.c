@@ -49,10 +49,10 @@ static void	ft_ptr_itoa_hex(unsigned long long nbr, t_print *tp)
 	{
 		if (nbr <= 9)
 			// ft_putchar_fd(nbr + '0', 1);
-			ft_write_ptr(nbr + '0', tp);
+			ft_write(nbr + '0', tp, 1);
 		else
 			// ft_putchar_fd(nbr - 10 + 'a', 1);
-			ft_write_ptr(nbr - 10 + 'a', tp);
+			ft_write(nbr - 10 + 'a', tp, 1);
 	}
 }
 
@@ -61,8 +61,10 @@ int	ft_print_ptr(va_list arg, t_print *tp)
 	unsigned long long	nbr;
 
 	nbr = va_arg(arg, unsigned long long );
-	write(1, "0x", 2);
+	// write(1, "0x", 2);
+	ft_write('0', tp, 1);
+	ft_write('x', tp, 1);
 	ft_ptr_itoa_hex(nbr, tp);
-	tp->len += 2;
+	// tp->len += 2;
 	return (1);
 }

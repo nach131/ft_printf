@@ -27,6 +27,7 @@ const	char	*ft_read_text(t_print *tp, const char *format)
 	else
 		tp->widht = ft_strlen(format);
 	// write(1, format, tp->widht); // Adapatar protype ft_write
+	
 	if (!tp->error)
 	{	
 		if (write(1, format, tp->widht) != 1)

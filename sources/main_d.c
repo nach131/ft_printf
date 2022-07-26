@@ -19,6 +19,7 @@
 
 #include "libft/inc/libft.h"
 #include "inc/ft_printf.h"
+#include <limits.h>
 
 int	main()
 {
@@ -37,10 +38,10 @@ int	main()
 
 
 
-// 	printf("------Puntero-------\n");
-// 	int ptr1 = ft_printf("%p", "");
-// 	int ptr2 = printf("%p", "");
-// 	printf("\nptr1 = %d\nptr2 = %d\n", ptr1, ptr2);
+	printf("------Puntero-------\n");
+	int ptr1 = ft_printf("0x%p-", (void *)ULONG_MAX);
+	int ptr2 = printf("0x%p-", (void *)ULONG_MAX);
+	printf("\nptr1 = %d\nptr2 = %d\n", ptr1, ptr2);
 
 // 	printf("------Puntero-------\n");
 // 	int ptr_1 = ft_printf("%p", NULL);
