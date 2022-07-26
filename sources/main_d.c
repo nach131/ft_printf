@@ -23,30 +23,30 @@
 
 int	main()
 {
-	printf("-------	no format ------\n");
-	int centa1 = ft_printf("\x01\x02\x07\v\x08\f\r\n");
-	printf("centa1 = %d\n", centa1);
-	int centa2 = printf("\x01\x02\x07\v\x08\f\r\n");
-	printf("centa2 = %d\n", centa2);
+	// printf("-------	no format ------\n");
+	// int centa1 = ft_printf("\x01\x02\x07\v\x08\f\r\n");
+	// printf("centa1 = %d\n", centa1);
+	// int centa2 = printf("\x01\x02\x07\v\x08\f\r\n");
+	// printf("centa2 = %d\n", centa2);
 
 
-	// printf("-------	s format OK------\n");
-	// int str1 = ft_printf("%s", (char *)NULL);
-	// printf("str1 = %d\n", str1);
-	// int str2 = printf("%s", (char *)NULL);
-	// printf("str2 = %d\n", str2);
+	printf("-------	s error-----\n");
+	int str1 = ft_printf(" NULL %s NULL ", NULL);
+	printf("str1 = %d\n", str1);
+	int str2 = printf(" NULL %s NULL ", NULL);
+	printf("str2 = %d\n", str2);
 
 
 
 	printf("------Puntero-------\n");
-	int ptr1 = ft_printf("0x%p-", (void *)ULONG_MAX);
-	int ptr2 = printf("0x%p-", (void *)ULONG_MAX);
+	int ptr1 = ft_printf("0x%p-\n", (void *)ULONG_MAX);
+	int ptr2 = printf("0x%p-\n", (void *)ULONG_MAX);
 	printf("\nptr1 = %d\nptr2 = %d\n", ptr1, ptr2);
 
-// 	printf("------Puntero-------\n");
-// 	int ptr_1 = ft_printf("%p", NULL);
-// 	int ptr_2 = printf("%p", NULL);
-// 	printf("\nptr_1 = %d\nptr_2 = %d\n", ptr_1, ptr_2);
+	// printf("------Puntero-------\n");
+	// int ptr_1 = ft_printf("%p\n", NULL);
+	// int ptr_2 = printf("%p\n", NULL);
+	// printf("\nptr_1 = %d\nptr_2 = %d\n", ptr_1, ptr_2);
 
 }
 

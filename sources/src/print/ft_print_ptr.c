@@ -17,15 +17,16 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-void	ft_write_ptr(char c, t_print *tp)
+//=============no funciona===================================================================
+void	ft_write_ptr(const char *c, t_print *tp, int c_len)
 {
 if (!tp->error)
 {	
 	// if (write(1, &c, 1) != 1)
-	if (write(1, &c, sizeof(char)) != sizeof(char))
+	if (write(c_len, &c, c_len) != sizeof(char))
 		{
 			tp->error = 1;
-			tp->len = -1;
+			// tp->len = -1;
 		}
 	else
 		tp->len += 1;
@@ -62,8 +63,10 @@ int	ft_print_ptr(va_list arg, t_print *tp)
 
 	nbr = va_arg(arg, unsigned long long );
 	// write(1, "0x", 2);
+	// ft_write_ptr("0x", tp, 2);
 	ft_write('0', tp, 1);
 	ft_write('x', tp, 1);
+
 	ft_ptr_itoa_hex(nbr, tp);
 	// tp->len += 2;
 	return (1);
