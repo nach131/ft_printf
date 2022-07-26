@@ -28,6 +28,7 @@ int	ft_printf(const char *format, ...)
 	va_start(arg, format);
 	tp.len = 0;
 	tp.widht = 0;
+	tp.error = 0;
 	while (*format)
 	{
 		if (*format == '%')

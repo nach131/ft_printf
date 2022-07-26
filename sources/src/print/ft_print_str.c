@@ -17,21 +17,29 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-int	ft_print_str(va_list arg, t_print *tp)
+
+static void	ft_putstr_str(char *s, t_print *tp)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_write(s[i], tp, 1);
+		i++;
+	}
+}
+
+
+void	ft_print_str(va_list arg, t_print *tp)
 {
 	char	*s;
 
 	s = va_arg(arg, char *);
 	if (!s)
 	{
-		write(1, "(null)", 6);
-		tp->len += 6;
-		return (-1);
+		ft_putstr_str("(null)", tp);
 	}
 	else
-	{
-		ft_putstr_fd(s, 1);
-		tp->len += ft_strlen(s);
-		return (1);
-	}
+		ft_putstr_str(s, tp);
 }

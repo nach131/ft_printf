@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_search_arg.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 10:52:12 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/20 17:26:32 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/07/26 12:53:02 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/07/26 12:53:09 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,16 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
-#include "libft.h"
+#include "unistd.h"
 
-const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
+void	ft_putstr(char *s, t_print *tp)
 {
-	if (*format == 'd' || *format == 'i')
-		ft_print_dec(arg, tp);
-	else if (*format == 's')
-		ft_print_str(arg, tp);
-	else if (*format == 'c')
-		ft_print_char(arg, tp);
-	else if (*format == '%')
-		ft_write('%', tp, 1);
-	else if (*format == 'x')
-		ft_print_hex(arg, tp, "0123456789abcdef");
-	else if (*format == 'X')
-		ft_print_hex(arg, tp, "0123456789ABCDEF");
-	else if (*format == 'u')
-		ft_print_unsint(arg, tp);
-	else if (*format == 'p')
-		ft_print_ptr(arg, tp);
-	else
-		{
-			tp->len = write(1, format, 1);
-		}
-	format++;
-	return (format);
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_write(s[i], tp, 1);
+		i++;
+	}
 }
