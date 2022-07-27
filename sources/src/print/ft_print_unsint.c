@@ -25,12 +25,14 @@ static void	ft_u_itoa_hex(unsigned int nbr, t_print *tp)
 	if (nbr > 9)
 	{
 		ft_u_itoa_hex(nbr / 10, tp);
-		ft_putchar_fd(nbr % 10 + '0', 1);
+		// ft_putchar_fd(nbr % 10 + '0', 1);
+		ft_write(nbr % 10 + '0', tp);
 		i++;
-		tp->len += i;
+		// tp->len += i;
 	}
 	else
-		ft_putchar_fd(nbr + '0', 1);
+		// ft_putchar_fd(nbr + '0', 1);
+		ft_write(nbr + '0', tp);
 }
 
 int	ft_print_unsint(va_list arg, t_print *tp)
@@ -39,6 +41,6 @@ int	ft_print_unsint(va_list arg, t_print *tp)
 
 	nbr = va_arg(arg, unsigned int );
 	ft_u_itoa_hex(nbr, tp);
-	tp->len += 1;
+	// tp->len += 1;
 	return (1);
 }

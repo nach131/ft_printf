@@ -31,10 +31,10 @@ static void	ft_ptr_itoa_hex(unsigned long long nbr, t_print *tp)
 	{
 		if (nbr <= 9)
 			// ft_putchar_fd(nbr + '0', 1);
-			ft_write(nbr + '0', tp, 1);
+			ft_write(nbr + '0', tp);
 		else
 			// ft_putchar_fd(nbr - 10 + 'a', 1);
-			ft_write(nbr - 10 + 'a', tp, 1);
+			ft_write(nbr - 10 + 'a', tp);
 	}
 }
 

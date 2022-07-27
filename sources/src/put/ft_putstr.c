@@ -23,7 +23,7 @@ void	ft_putstr(const char *s, t_print *tp)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		ft_write(s[i], tp, 1);
+		ft_write(s[i], tp);
 		i++;
 	}
 }

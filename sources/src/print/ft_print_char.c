@@ -23,6 +23,6 @@ void	ft_print_char(va_list arg, t_print *tp)
 
 	c = va_arg(arg, int);
 	// ft_putchar_fd(c, 1);
-	ft_write(c, tp, 1);
+	ft_write(c, tp);
 		// tp->len += 1;
 }

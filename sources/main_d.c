@@ -62,6 +62,11 @@ int	main()
 	// int dec2 = printf("%d", 0);
 	// printf("\ndec1 = %d\ndec2 = %d\n", dec1, dec2);
 
+	printf("------Un test 11-------\n");
+	int un1 = ft_printf("dgs%uxx\n", 10);
+	int un2 = printf("dgs%uxx\n", 10);
+	printf("\nun1 = %d\nun2 = %d\n", un1, un2);
+
 
 }
 

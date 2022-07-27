@@ -16,15 +16,15 @@
 
 #include "ft_printf.h"
 
-void	ft_write(char c, t_print *tp, int c_len)
+void	ft_write(char c, t_print *tp)
 {
 if (!tp->error)
 {	
 	// if (write(1, &c, 1) != 1)
-	if (write(1, &c, c_len) == -1)
+	if (write(1, &c, 1) == -1)
 		{
 			tp->error = 1;
-			// if(tp->len == 0)
+			if(tp->len == 0)
 				tp->len = -1;
 		}
 	else
