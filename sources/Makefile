@@ -37,8 +37,12 @@ PRINT_DIR = print/
 PRINT_FILES = ft_print_str ft_print_char \
 			  ft_print_dec ft_print_unsint ft_print_ptr ft_print_hex
 
-SRC_FILES = ft_printf ft_search_arg ft_read_text ft_write
+PUT_DIR = put/
+PUT_FILES = ft_putstr ft_write
+
+SRC_FILES = ft_printf ft_search_arg ft_read_text
 SRC_FILES += $(addprefix $(PRINT_DIR), $(PRINT_FILES))
+SRC_FILES += $(addprefix $(PUT_DIR), $(PUT_FILES))
 
 SRCS = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -67,6 +71,7 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.c $(INCLUDES)/ft_printf.h
 DIR:
 			@mkdir -p $(OBJ_DIR)
 			@mkdir -p $(OBJ_DIR)$(PRINT_DIR)
+			@mkdir -p $(OBJ_DIR)$(PUT_DIR)
 
 clean : 
 			echo $(OBJS)

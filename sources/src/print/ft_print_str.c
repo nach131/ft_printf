@@ -15,21 +15,6 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
-#include "libft.h"
-
-
-static void	ft_putstr_str(char *s, t_print *tp)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		ft_write(s[i], tp, 1);
-		i++;
-	}
-}
-
 
 void	ft_print_str(va_list arg, t_print *tp)
 {
@@ -38,8 +23,8 @@ void	ft_print_str(va_list arg, t_print *tp)
 	s = va_arg(arg, char *);
 	if (!s)
 	{
-		ft_putstr_str("(null)", tp);
+		ft_putstr("(null)", tp);
 	}
 	else
-		ft_putstr_str(s, tp);
+		ft_putstr(s, tp);
 }

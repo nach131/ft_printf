@@ -15,23 +15,19 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 //=============no funciona===================================================================
-void	ft_write_ptr(const char *c, t_print *tp, int c_len)
-{
-if (!tp->error)
-{	
-	// if (write(1, &c, 1) != 1)
-	if (write(c_len, &c, c_len) != sizeof(char))
-		{
-			tp->error = 1;
-			// tp->len = -1;
-		}
-	else
-		tp->len += 1;
-	}
-}
+// static void	ft_putstr_str(char *s, t_print *tp)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (s[i] != '\0')
+// 	{
+// 		ft_write(s[i], tp, 1);
+// 		i++;
+// 	}
+// }
 
 
 static void	ft_ptr_itoa_hex(unsigned long long nbr, t_print *tp)
@@ -63,9 +59,10 @@ int	ft_print_ptr(va_list arg, t_print *tp)
 
 	nbr = va_arg(arg, unsigned long long );
 	// write(1, "0x", 2);
-	// ft_write_ptr("0x", tp, 2);
-	ft_write('0', tp, 1);
-	ft_write('x', tp, 1);
+	ft_putstr("0x", tp);
+	
+	// ft_write('0', tp, 1);
+	// ft_write('x', tp, 1);
 
 	ft_ptr_itoa_hex(nbr, tp);
 	// tp->len += 2;
