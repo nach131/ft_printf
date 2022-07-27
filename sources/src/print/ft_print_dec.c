@@ -79,7 +79,7 @@ void	ft_putnbr_dec(int n, t_print *tp)
 // 	return (0);
 // }
 
-int	ft_print_dec(va_list arg, t_print *tp)
+void	ft_print_dec(va_list arg, t_print *tp)
 {
 	int	d;
 
@@ -87,5 +87,4 @@ int	ft_print_dec(va_list arg, t_print *tp)
 	ft_putnbr_dec(d, tp);
 	// ft_putnbr_fd(d, 1);
 	// tp->len += ft_intlen_dec(d);
-	return (1);
 }
