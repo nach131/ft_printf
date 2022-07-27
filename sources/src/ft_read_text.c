@@ -73,8 +73,8 @@ ft_write_read(format, tp);
 // printf("read widht%d\n", tp->widht);
 //===========================================================================================
 
-	// if (tp->widht > 1)
-	// 	tp->len += tp->widht;
+	if (tp->widht > 1)
+		tp->len += tp->widht;
 	while (*format && *format != '%')
 		++format;
 	// format++;
