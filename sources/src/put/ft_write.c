@@ -15,20 +15,20 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
-#include "unistd.h"
 
 void	ft_write(char c, t_print *tp, int c_len)
 {
 if (!tp->error)
 {	
 	// if (write(1, &c, 1) != 1)
-	if (write(1, &c, c_len) != sizeof(char))
+	if (write(1, &c, c_len) == -1)
 		{
 			tp->error = 1;
-			tp->len = -1;
+			// if(tp->len == 0)
+				tp->len = -1;
 		}
 	else
-		tp->len += 1;
+			tp->len += 1;
 	}
 }
 

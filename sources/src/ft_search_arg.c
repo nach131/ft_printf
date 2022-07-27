@@ -19,26 +19,27 @@
 
 const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
 {
-	if (*format == 'd' || *format == 'i')
-		ft_print_dec(arg, tp);
+	if (*format == '%')
+		ft_write('%', tp, 1);
 	else if (*format == 's')
 		ft_print_str(arg, tp);
+	else if (*format == 'p')
+		ft_print_ptr(arg, tp);
+	else if (*format == 'd' || *format == 'i')
+		ft_print_dec(arg, tp);
 	else if (*format == 'c')
 		ft_print_char(arg, tp);
-	else if (*format == '%')
-		ft_write('%', tp, 1);
 	else if (*format == 'x')
 		ft_print_hex(arg, tp, "0123456789abcdef");
 	else if (*format == 'X')
 		ft_print_hex(arg, tp, "0123456789ABCDEF");
 	else if (*format == 'u')
 		ft_print_unsint(arg, tp);
-	else if (*format == 'p')
-		ft_print_ptr(arg, tp);
-	else
-		{
-			tp->len = write(1, format, 1);
-		}
+	// else
+	// 	{
+	// 		printf("else%s\t\n", format);
+	// 		tp->len = write(1, format, 1);
+	// 	}
 	format++;
 	return (format);
 }

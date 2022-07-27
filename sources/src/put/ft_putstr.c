@@ -16,7 +16,7 @@
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s, t_print *tp)
+void	ft_putstr(const char *s, t_print *tp)
 {
 	int	i;
 

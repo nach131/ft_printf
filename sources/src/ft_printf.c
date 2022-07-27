@@ -40,13 +40,14 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 			format = ft_read_text(&tp, format);
-		if (!format)
-		{
-			if(write(1, "(null)", 6) == -1)
-				return (-1);
-			va_end(arg);
-			return (tp.len);
-		}
+//=====no esta haciendo nada===========================================================================
+		// if (!format)
+		// {
+		// 	if(write(1, "(null)", 6) == -1)
+		// 		return (-1);
+		// 	va_end(arg);
+		// 	return (tp.len);
+		// }
 	}
 	va_end(arg);
 	return (tp.len);

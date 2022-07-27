@@ -16,20 +16,6 @@
 
 #include "ft_printf.h"
 
-//=============no funciona===================================================================
-// static void	ft_putstr_str(char *s, t_print *tp)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i] != '\0')
-// 	{
-// 		ft_write(s[i], tp, 1);
-// 		i++;
-// 	}
-// }
-
-
 static void	ft_ptr_itoa_hex(unsigned long long nbr, t_print *tp)
 {
 	int	i;
@@ -40,7 +26,6 @@ static void	ft_ptr_itoa_hex(unsigned long long nbr, t_print *tp)
 		ft_ptr_itoa_hex(nbr / 16, tp);
 		ft_ptr_itoa_hex(nbr % 16, tp);
 		i++;
-		// tp->len += i;
 	}
 	else
 	{
@@ -53,18 +38,13 @@ static void	ft_ptr_itoa_hex(unsigned long long nbr, t_print *tp)
 	}
 }
 
-int	ft_print_ptr(va_list arg, t_print *tp)
+void	ft_print_ptr(va_list arg, t_print *tp)
 {
 	unsigned long long	nbr;
 
 	nbr = va_arg(arg, unsigned long long );
 	// write(1, "0x", 2);
 	ft_putstr("0x", tp);
-	
-	// ft_write('0', tp, 1);
-	// ft_write('x', tp, 1);
-
 	ft_ptr_itoa_hex(nbr, tp);
-	// tp->len += 2;
-	return (1);
+	// printf("\nprincipal%d\n", tp->len);
 }
