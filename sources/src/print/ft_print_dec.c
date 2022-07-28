@@ -15,33 +15,16 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
-#include "libft.h"
-
-static void	ft_write_read(const char *c, t_print *tp)
-{
-if (!tp->error)
-{	
-	// if (write(1, &c, 1) != 1)
-	if (write(1, c, tp->widht) == -1)
-		{
-			tp->error = 1;
-			if(tp->len == 0)
-				tp->len = -1;
-		}
-	else
-			tp->len += 1;
-	}
-}
 
 void	ft_putnbr_dec(int n, t_print *tp)
 {
 	if (n < 0)
 	{
 		if (n == -2147483648)
-			ft_write_read ("-2147483648", tp);
+			ft_write_str("-2147483648", tp);
 		else
 		{
-			ft_write_read("-", tp);
+			ft_write_str("-", tp);
 			n = -n;
 		}	
 	}
@@ -50,34 +33,6 @@ void	ft_putnbr_dec(int n, t_print *tp)
 	if (n != -2147483648)
 		ft_write ('0' + n % 10, tp);
 }
-
-// static int	ft_intlen_dec(int nb)
-// {
-// 	int	i;
-// 	int	number;
-// 	int	neg;
-
-// 	i = 0;
-// 	if (!nb)
-// 		return (1);
-// 	if (nb < 0)
-// 	{
-// 		neg = 1;
-// 		number = -nb;
-// 	}
-// 	else
-// 	{
-// 		neg = 0;
-// 		number = nb;
-// 	}
-// 	while (number)
-// 	{
-// 		number /= 10;
-// 		i++;
-// 	}
-// 	return (i + neg);
-// 	return (0);
-// }
 
 void	ft_print_dec(va_list arg, t_print *tp)
 {

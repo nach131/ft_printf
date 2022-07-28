@@ -38,7 +38,7 @@ PRINT_FILES = ft_print_str ft_print_char \
 			  ft_print_dec ft_print_unsint ft_print_ptr ft_print_hex
 
 PUT_DIR = put/
-PUT_FILES = ft_putstr ft_write
+PUT_FILES = ft_putstr ft_write ft_write_str
 
 SRC_FILES = ft_printf ft_search_arg ft_read_text
 SRC_FILES += $(addprefix $(PRINT_DIR), $(PRINT_FILES))

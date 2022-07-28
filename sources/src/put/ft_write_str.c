@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_write_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 23:17:24 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/06/19 11:16:43 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/07/28 16:23:38 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/07/28 16:23:40 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* ╔════════════════════════════════════════════════════════════════════════╗ */
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
-// Escribe el número ’n’ al file descriptor dado.
-//	#1. El número ’n’ a escribir.
-//	#2. El file descriptor en el que escribir.
 
-#include"libft.h"
+#include "ft_printf.h"
 
-void	ft_putchar(int fd_p, char c)
+void	ft_write_str(const char *c, t_print *tp)
 {
-	write(fd_p, &c, 1);
-}
-
-void	ft_putnbr_fd(int n, int fd)
-{
-	if (n < 0)
-	{
-		if (n == -2147483648)
-			write (fd, "-2147483648", 11);
-		else
+if (!tp->error)
+{	
+	// if (write(1, &c, 1) != 1)
+	if (write(1, c, tp->widht) == -1)
 		{
-			ft_putchar(fd, '-');
-			n = -n;
-		}	
+			tp->error = 1;
+			if(tp->len == 0)
+				tp->len = -1;
+		}
+	else
+			tp->len += 1;
 	}
-	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
-	if (n != -2147483648)
-		ft_putchar (fd, ('0' + n % 10));
 }
