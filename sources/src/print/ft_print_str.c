@@ -17,7 +17,7 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-int	ft_print_str(va_list arg, t_print *tp)
+void	ft_print_str(va_list arg, t_print *tp)
 {
 	char	*s;
 
@@ -26,12 +26,10 @@ int	ft_print_str(va_list arg, t_print *tp)
 	{
 		write(1, "(null)", 6);
 		tp->len += 6;
-		return (-1);
 	}
 	else
 	{
 		ft_putstr_fd(s, 1);
 		tp->len += ft_strlen(s);
-		return (1);
 	}
 }

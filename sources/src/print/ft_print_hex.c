@@ -17,7 +17,7 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-int	ft_print_hex(va_list arg, t_print *tp, char *hexa)
+void	ft_print_hex(va_list arg, t_print *tp, char *hexa)
 {
 	unsigned int	x;
 	int				res[128];
@@ -41,5 +41,4 @@ int	ft_print_hex(va_list arg, t_print *tp, char *hexa)
 		count++;
 	}
 	tp->len += count;
-	return (1);
 }

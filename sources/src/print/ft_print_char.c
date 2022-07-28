@@ -17,12 +17,11 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-int	ft_print_char(va_list arg, t_print *tp)
+void	ft_print_char(va_list arg, t_print *tp)
 {
 	int	c;
 
 	c = va_arg(arg, int);
 	ft_putchar_fd(c, 1);
 		tp->len += 1;
-	return (1);
 }

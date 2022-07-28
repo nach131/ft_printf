@@ -33,12 +33,11 @@ static void	ft_u_itoa_hex(unsigned int nbr, t_print *tp)
 		ft_putchar_fd(nbr + '0', 1);
 }
 
-int	ft_print_unsint(va_list arg, t_print *tp)
+void	ft_print_unsint(va_list arg, t_print *tp)
 {
 	unsigned long	nbr;
 
 	nbr = va_arg(arg, unsigned int );
 	ft_u_itoa_hex(nbr, tp);
 	tp->len += 1;
-	return (1);
 }
