@@ -42,6 +42,7 @@ if (!tp->error)
 				tp->len = -1;
 		}
 	else
+			// tp->len += 1;
 			tp->len += 1;
 	}
 }
@@ -58,6 +59,8 @@ const	char	*ft_read_text(t_print *tp, const char *format)
 // ft_putstr(format, tp);
 ft_write_read(format, tp);
 
+
+
 //==mismo ====ft_write_read==========================================================================
 	// if (!tp->error)
 	// {	
@@ -73,10 +76,23 @@ ft_write_read(format, tp);
 // printf("read widht%d\n", tp->widht);
 //===========================================================================================
 
+		// printf("\e[3;31m %d \e[0m\n", tp->widht);
+	// if (tp->widht >= 6)
+	// {
+	// 		printf("\e[3;31mlen %d \e[0m\n", tp->len);
+	// 	printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
+	// 		tp->len = tp->widht;
+	// }
 	if (tp->widht > 1)
-		tp->len += tp->widht;
+{		
+		// printf("\e[3;31m %d \e[0m\n", tp->widht);
+		// tp->len += tp->widht;
+		// cambiado para que no sume
+		tp->len = tp->widht;
+		}
 	while (*format && *format != '%')
 		++format;
+	
 	// format++;
 	return (format);
 }
