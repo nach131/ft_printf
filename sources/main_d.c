@@ -25,9 +25,9 @@ int	main()
 {
 	// printf(" %li %li %lu\n", LONG_MAX, LONG_MIN, ULONG_MAX);
 	printf("-------	no format ------\n");
-	int centa1 = ft_printf("\x01\x02\x07\v\x08\f\r\n");
+	int centa1 = ft_printf("\x01\x02\x07\v\x08\f\r");
 	printf("centa1 = %d\n", centa1);
-	int centa2 = printf("\x01\x02\x07\v\x08\f\r\n");
+	int centa2 = printf("\x01\x02\x07\v\x08\f\r");
 	printf("centa2 = %d\n", centa2);
 
 
@@ -42,17 +42,17 @@ int	main()
 	int dec_2 = printf(" %d \n", INT_MIN);
 	printf("\ndec_1 = %d\ndec_2 = %d\n", dec_1, dec_2);
 
-	printf("------d 29-------\n");
-	int dec29_1 = ft_printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-	int dec29_2 = printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-	printf("\ndec29_1 = %d\ndec29_2 = %d\n", dec29_1, dec29_2);
+	// printf("------d 29-------\n");
+	// int dec29_1 = ft_printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// int dec29_2 = printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// printf("\ndec29_1 = %d\ndec29_2 = %d\n", dec29_1, dec29_2);
 
-	printf("------ptr ULONG_MAX-------\n");
-	int ptr1 = ft_printf("0x%p-\n", (void *)ULONG_MAX);
-	int ptr2 = printf("0x%p-\n", (void *)ULONG_MAX);
-	// int ptr1 = ft_printf("%p-\n", (void *)ULONG_MAX);
-	// int ptr2 = printf("%p-\n", (void *)ULONG_MAX);
-	printf("\nptr1 = %d\nptr2 = %d\n", ptr1, ptr2);
+	// printf("------ptr ULONG_MAX-------\n");
+	// int ptr1 = ft_printf("0x%p-\n", (void *)ULONG_MAX);
+	// int ptr2 = printf("0x%p-\n", (void *)ULONG_MAX);
+	// // int ptr1 = ft_printf("%p-\n", (void *)ULONG_MAX);
+	// // int ptr2 = printf("%p-\n", (void *)ULONG_MAX);
+	// printf("\nptr1 = %d\nptr2 = %d\n", ptr1, ptr2);
 
 	printf("------%% 4-------\n");
 	int por4_1 = ft_printf(" %%  %%  %% ");

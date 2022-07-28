@@ -35,11 +35,11 @@ const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
 		ft_print_hex(arg, tp, "0123456789abcdef");
 	else if (*format == 'X')
 		ft_print_hex(arg, tp, "0123456789ABCDEF");
-	// else
-	// 	{
-	// 		printf("else%s\t\n", format);
-	// 		tp->len = write(1, format, 1);
-	// 	}
+	else
+		{
+			printf("\e[3;31melse \e[0m\n");
+			// tp->len = write(1, format, 1);
+		}
 	format++;
 	return (format);
 }
