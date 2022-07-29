@@ -27,6 +27,7 @@ int	ft_printf(const char *format, ...)
 
 	va_start(arg, format);
 	tp.len = 0;
+	tp.len_str = 0;
 	tp.widht = 0;
 	tp.error = 0;
 	while (*format)
@@ -51,8 +52,11 @@ int	ft_printf(const char *format, ...)
 		// 	return (tp.len);
 		// }
 	}
-	// printf("\e[3;31m len:%d \e[0m\n", tp.len);
+
 	va_end(arg);
 	return (tp.len);
 }
 
+		// printf("\e[3;33mcount ini %d \e[0m\n", count);
+			// printf("\e[3;31mlen %d \e[0m\n", tp->len);
+			// printf("\e[1;34mwidht %d \e[0m\n", tp->widht);

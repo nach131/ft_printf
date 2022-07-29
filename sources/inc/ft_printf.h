@@ -20,6 +20,7 @@
 typedef struct s_print
 {
 	int	len;
+	int	len_str;
 	int	widht;
 	int	error;
 }	t_print;

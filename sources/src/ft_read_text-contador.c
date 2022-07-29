@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_write.c                                         :+:      :+:    :+:   */
+/*   ft_read_text.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/25 00:42:28 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/25 00:46:46 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/07/16 12:41:13 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/07/26 14:05:11 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,53 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
+#include "libft.h"
 
-void	ft_write(char c, t_print *tp)
+static void	ft_write_str(const char *c, t_print *tp)
 {
 if (!tp->error)
 {	
-	if (write(1, &c, 1) == -1)
+	// if (write(1, &c, 1) != 1)
+	if (write(1, c, tp->widht) == -1)
 		{
 			tp->error = 1;
 			if(tp->len == 0)
 				tp->len = -1;
 		}
 	else
-			tp->len += 1;
+				tp->len += 1;
 	}
+	if(tp->widht > 1)
+		tp->len = tp->widht;
 }
 
+const	char	*ft_read_text(t_print *tp, const char *format)
+{
+	char	*next;
+	int		contador = 0;
+	int		*ptr = &contador;
+	next = ft_strchr(format, '%');
+
+	if (next)
+		tp->widht = next - format;
+	else
+			tp->widht = ft_strlen(format);
+	ft_write_str(format, tp);
+
+// 	if (tp->widht > 1)
+// {		
+// 		// printf("\e[3;31m %d \e[0m\n", tp->widht);
+// 		// tp->len += tp->widht;
+// 		// cambiado para que no sume
+// 		tp->len = tp->widht;
+// 		}
+
+	while (*format && *format != '%')
+		++format;
+	
+		printf("\e[3;31mlen %d \e[0m\n", tp->len);
+		printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
+		// printf("\e[3;33m aki:%s \e[0m\n", format);
+		printf("\e[3;33m contador:%d \e[0m\n", contador);
+	return (format);
+}

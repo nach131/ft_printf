@@ -39,11 +39,24 @@ int main()
 	str_2_1 == str_2_2 ? printf("\e[5;32mft_printf: %d\nprintf: %d\n\e[0m\n", str_2_1, str_2_2)
 						: printf("\e[3;31mft_printf: %d\n\e[5;32mprintf: %d\n\e[0m\n", str_2_1, str_2_2);
 
-	printf("\033[0;34m-------	dec T29------\033[0;37m\n");
-	int str_3_1 = ft_printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN,ULONG_MAX, 0, -42);
-	int str_3_2 = printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN,ULONG_MAX, 0, -42);
-	str_3_1 == str_3_2 ? printf("\e[5;32mft_printf: %d\nprintf: %d\n\e[0m\n", str_3_1, str_3_2)
-						: printf("\e[3;31mft_printf: %d\n\e[5;32mprintf: %d\n\e[0m\n", str_3_1, str_3_2);
+	printf("\033[0;34m-------	%% T4------\033[0;37m\n");
+	int char_4_1 = ft_printf(" %%  %%  %% \n");
+	int char_4_2 = printf(" %%  %%  %% \n");
+	char_4_1 == char_4_2 ? printf("\e[5;32mft_printf: %d\nprintf: %d\n\e[0m\n", char_4_1, char_4_2)
+						: printf("\e[3;31mft_printf: %d\n\e[5;32mprintf: %d\n\e[0m\n", char_4_1, char_4_2);
+
+	printf("\033[0;34m-------	%% T5------\033[0;37m\n");
+	int char_5_1 = ft_printf(" %%   %%   %% \n");
+	int char_5_2 = printf(" %%   %%   %% \n");	
+	char_5_1 == char_5_2 ? printf("\e[5;32mft_printf: %d\nprintf: %d\n\e[0m\n", char_5_1, char_5_2)
+						: printf("\e[3;31mft_printf: %d\n\e[5;32mprintf: %d\n\e[0m\n", char_5_1, char_5_2);
+
+
+	// printf("\033[0;34m-------	dec T29------\033[0;37m\n");
+	// int str_3_1 = ft_printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN,ULONG_MAX, 0, -42);
+	// int str_3_2 = printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN,ULONG_MAX, 0, -42);
+	// str_3_1 == str_3_2 ? printf("\e[5;32mft_printf: %d\nprintf: %d\n\e[0m\n", str_3_1, str_3_2)
+	// 					: printf("\e[3;31mft_printf: %d\n\e[5;32mprintf: %d\n\e[0m\n", str_3_1, str_3_2);
 
 	// printf("\033[0;34m-------	string T4------\033[0;37m\n");
 	// int str_4_1 = ft_printf(" %s ", "\n");

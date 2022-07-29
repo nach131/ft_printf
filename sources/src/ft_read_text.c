@@ -25,32 +25,29 @@ if (!tp->error)
 	if (write(1, c, tp->widht) == -1)
 		{
 			tp->error = 1;
-			if(tp->len == 0)
+			// if(tp->len == 0) //esto no tenia mucho sentido
 				tp->len = -1;
 		}
 	else
 				tp->len += 1;
 	}
+	if(tp->widht > 1)
+	{	
+		tp->len = tp->widht;
+		}
 }
 
 const	char	*ft_read_text(t_print *tp, const char *format)
 {
 	char	*next;
-
 	next = ft_strchr(format, '%');
+
 	if (next)
 		tp->widht = next - format;
 	else
-		{
 			tp->widht = ft_strlen(format);
-			// tp->nach += tp->widht;
-			// printf("\e[3;33mcount ini %d \e[0m\n", count);
-			// printf("\e[3;31mlen %d \e[0m\n", tp->len);
-			// printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
-		}
 	ft_write_str(format, tp);
-			// printf("\e[3;31mlen %d \e[0m\n", tp->len);
-			// printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
+
 // 	if (tp->widht > 1)
 // {		
 // 		// printf("\e[3;31m %d \e[0m\n", tp->widht);
@@ -61,6 +58,9 @@ const	char	*ft_read_text(t_print *tp, const char *format)
 
 	while (*format && *format != '%')
 		++format;
-	// format++;
+	
+		// printf("\e[3;31mlen %d \e[0m\n", tp->len);
+		// printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
+		// printf("\e[3;33m len str:%d \e[0m\n", tp->len_str);
 	return (format);
 }

@@ -44,6 +44,8 @@ void	ft_print_dec(va_list arg, t_print *tp)
 
 	d = va_arg(arg, int);
 	ft_putnbr_dec(d, tp);
+		// 	printf("\e[3;31mlen %d \e[0m\n", tp->len);
+		// printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
 	// ft_putnbr_fd(d, 1);
 	// tp->len += ft_intlen_dec(d);
 }

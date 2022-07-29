@@ -51,11 +51,11 @@ int main()
 	str_4_1 == str_4_2 ? printf("\e[5;32mft_printf: %d\nprintf: %d\n\e[0m\n", str_4_1, str_4_2)
 						: printf("\e[3;31mft_printf: %d\n\e[5;32mprintf: %d\n\e[0m\n", str_4_1, str_4_2);
 
-	// printf("\033[0;34m-------	string T5------\033[0;37m\n");
-	// int str_5_1 = ft_printf(" %%   %%   %% \n");
-	// int str_5_2 = printf(" %%   %%   %% \n");	
-	// str_5_1 == str_5_2 ? printf("\e[5;32mft_printf: %d\nprintf: %d\n\e[0m\n", str_5_1, str_5_2)
-	// 					: printf("\e[3;31mft_printf: %d\n\e[5;32mprintf: %d\n\e[0m\n", str_5_1, str_5_2);
+	printf("\033[0;34m-------	string T5------\033[0;37m\n");
+	int str_5_1 = ft_printf(" %%   %%   %% \n");
+	int str_5_2 = printf(" %%   %%   %% \n");	
+	str_5_1 == str_5_2 ? printf("\e[5;32mft_printf: %d\nprintf: %d\n\e[0m\n", str_5_1, str_5_2)
+						: printf("\e[3;31mft_printf: %d\n\e[5;32mprintf: %d\n\e[0m\n", str_5_1, str_5_2);
 	
 	printf("\033[0;34m-------	string T6------\033[0;37m\n");
 	int str_6_1 = ft_printf(" %s %s ", "", "-\n");
