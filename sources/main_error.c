@@ -25,33 +25,31 @@ int	main()
 
 
 
-	// printf("-------NULL------\n");
-	// int null = ft_printf("42 Barcelona %s\n", NULL);
-	// int null2 = printf("42 Barcelona %s\n", NULL);
-	// printf("\nstr = %d\nstr2 = %d\n", null, null2);
+	printf("-------s T10 ------\n");
+	int str1 = ft_printf(" NULL %s NULL \n", NULL);
+	int str2 = printf(" NULL %s NULL \n", NULL);
+	printf("\nstr1 = %d\nstr2 = %d\n", str1, str2);
 
-	// printf("-------	String------\n");
-	// int str1 = ft_printf("42 Barcelona %s\n", "hola");
-	// int str2 = printf("42 Barcelona %s\n", "hola");
-	// printf("\nstr1 = %d\nstr2 = %d\n", str1, str2);
+	// printf("-------	d T23------\n");
+	// int str_23_1 = ft_printf(" %d \n", INT_MIN);
+	// int str_23_2 = printf(" %d \n", INT_MIN);
+	// printf("\nstr_23_1 = %d\nstr_23_2 = %d\n", str_23_1, str_23_2);
 
-	// printf("-------	%% ------\n");
-	// int centa1 = ft_printf("%aa\n");
-	// printf("centa1 = %d\n", centa1);
-	// int centa2 = printf("%aa\n");
-	// printf("centa2 = %d\n", centa2);
+	// printf("-------	d & i T29------\n");
+	// int str_29_1 = ft_printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0,-42);
+	// int str_29_2 = printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0,-42);
+	// printf("\nstr_29_1 = %d\nstr_29_2 = %d\n", str_29_1, str_29_2);
 
-	printf("-------	%% ------\n");
-	int centa1 = ft_printf("%%\n");
-	printf("centa1 = %d\n", centa1);
-	int centa2 = printf("%%\n");
-	printf("centa2 = %d\n", centa2);
+	// printf("-------	%% T4------\n");
+	// int char_4_1 = ft_printf(" %%  %%  %% \n");
+	// int char_4_2 = printf(" %%  %%  %% \n");
+	// printf("\nchar_4_1 = %d\nchar_4_2 = %d\n", char_4_1, char_4_2);
 
+	// printf("-------	%% T5------\n");
+	// int char_5_1 = ft_printf(" %%   %%   %% \n");
+	// int char_5_2 = printf(" %%   %%   %% \n");
+	// printf("\nchar_5_1 = %d\nchar_5_2 = %d\n", char_5_1, char_5_2);
 
-	// printf("-------	Char------\n");
-	// int char1 = ft_printf("%c\n", NULL);
-	// int char2 = printf("%c\n", NULL);
-	// printf("\nchar1 = %d\nchar2 = %d\n", char1, char2);
 
 	// printf("------Decimal Unsigned-------\n");
 	// int uns1 = ft_printf("%u\n", (unsigned int) 4294967295);

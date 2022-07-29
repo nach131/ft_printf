@@ -2,7 +2,7 @@
 ._.DS_Store
 *.swo
 *.swp
-a.out
+*.out
 *.swm
 *.swk
 *.swl
