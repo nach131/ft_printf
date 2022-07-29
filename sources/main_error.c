@@ -25,10 +25,10 @@ int	main()
 
 
 
-	printf("-------s T10 ------\n");
-	int str1 = ft_printf(" NULL %s NULL \n", NULL);
-	int str2 = printf(" NULL %s NULL \n", NULL);
-	printf("\nstr1 = %d\nstr2 = %d\n", str1, str2);
+	// printf("-------s T10 ------\n");
+	// int str1 = ft_printf(" NULL %s NULL \n", NULL);
+	// int str2 = printf(" NULL %s NULL \n", NULL);
+	// printf("\nstr1 = %d\nstr2 = %d\n", str1, str2);
 
 	// printf("-------	d T23------\n");
 	// int str_23_1 = ft_printf(" %d \n", INT_MIN);
@@ -40,15 +40,20 @@ int	main()
 	// int str_29_2 = printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0,-42);
 	// printf("\nstr_29_1 = %d\nstr_29_2 = %d\n", str_29_1, str_29_2);
 
-	// printf("-------	%% T4------\n");
-	// int char_4_1 = ft_printf(" %%  %%  %% \n");
-	// int char_4_2 = printf(" %%  %%  %% \n");
-	// printf("\nchar_4_1 = %d\nchar_4_2 = %d\n", char_4_1, char_4_2);
+	printf("-------	%% T2------\n");
+	int char_2_1 = ft_printf("%% %%\n");
+	int char_2_2 = printf("%% %%\n");
+	printf("\nchar_2_1 = %d\nchar_2_2 = %d\n", char_2_1, char_2_2);
 
-	// printf("-------	%% T5------\n");
-	// int char_5_1 = ft_printf(" %%   %%   %% \n");
-	// int char_5_2 = printf(" %%   %%   %% \n");
-	// printf("\nchar_5_1 = %d\nchar_5_2 = %d\n", char_5_1, char_5_2);
+	printf("-------	%% T4------\n");
+	int char_4_1 = ft_printf(" %%  %%  %% \n");
+	int char_4_2 = printf(" %%  %%  %% \n");
+	printf("\nchar_4_1 = %d\nchar_4_2 = %d\n", char_4_1, char_4_2);
+
+	printf("-------	%% T5------\n");
+	int char_5_1 = ft_printf(" %%   %%   %% \n");
+	int char_5_2 = printf(" %%   %%   %% \n");
+	printf("\nchar_5_1 = %d\nchar_5_2 = %d\n", char_5_1, char_5_2);
 
 
 	// printf("------Decimal Unsigned-------\n");

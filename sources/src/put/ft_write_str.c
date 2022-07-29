@@ -28,6 +28,6 @@ if (!tp->error)
 				tp->len = -1;
 		}
 	else
-			tp->len += 1;
+				tp->len += 1;
 	}
 }

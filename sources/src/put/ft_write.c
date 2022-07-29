@@ -29,6 +29,8 @@ if (!tp->error)
 		}
 	else
 			tp->len += 1;
+			// printf("\e[3;31mlen %d \e[0m\n", tp->len);
+			// printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
 	}
 }
 
