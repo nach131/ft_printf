@@ -20,7 +20,6 @@ void	ft_write(char c, t_print *tp)
 {
 if (!tp->error)
 {	
-	// if (write(1, &c, 1) != 1)
 	if (write(1, &c, 1) == -1)
 		{
 			tp->error = 1;

@@ -33,15 +33,15 @@ const	char	*ft_read_text(t_print *tp, const char *format)
 			// printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
 		}
 	ft_write_str(format, tp);
-			printf("\e[3;31mlen %d \e[0m\n", tp->len);
-			printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
-	if (tp->widht > 1)
-{		
-		// printf("\e[3;31m %d \e[0m\n", tp->widht);
-		// tp->len += tp->widht;
-		// cambiado para que no sume
-		tp->len = tp->widht;
-		}
+			// printf("\e[3;31mlen %d \e[0m\n", tp->len);
+			// printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
+// 	if (tp->widht > 1)
+// {		
+// 		// printf("\e[3;31m %d \e[0m\n", tp->widht);
+// 		// tp->len += tp->widht;
+// 		// cambiado para que no sume
+// 		tp->len = tp->widht;
+// 		}
 
 	while (*format && *format != '%')
 		++format;

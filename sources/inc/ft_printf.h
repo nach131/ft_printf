@@ -22,7 +22,6 @@ typedef struct s_print
 	int	len;
 	int	widht;
 	int	error;
-	int	nach;
 }	t_print;
 
 int			ft_printf(const char *format, ...);

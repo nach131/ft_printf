@@ -29,13 +29,11 @@ int	ft_printf(const char *format, ...)
 	tp.len = 0;
 	tp.widht = 0;
 	tp.error = 0;
-	tp.nach = ft_strlen(format);
 	while (*format)
 	{
 		if (*format == '%')
 			{
 				format = ft_search_arg(arg, format + 1, &tp);
-			tp.nach -= 1;
 			}
 		else if (tp.len == -1)
 		{
@@ -53,8 +51,8 @@ int	ft_printf(const char *format, ...)
 		// 	return (tp.len);
 		// }
 	}
+	// printf("\e[3;31m len:%d \e[0m\n", tp.len);
 	va_end(arg);
-	printf("\e[3;31m nach:%d \e[0m\n", tp.nach);
 	return (tp.len);
 }
 
