@@ -17,6 +17,22 @@
 #include "ft_printf.h"
 #include "libft.h"
 
+static void	ft_write_str(const char *c, t_print *tp)
+{
+if (!tp->error)
+{	
+	// if (write(1, &c, 1) != 1)
+	if (write(1, c, tp->widht) == -1)
+		{
+			tp->error = 1;
+			if(tp->len == 0)
+				tp->len = -1;
+		}
+	else
+				tp->len += 1;
+	}
+}
+
 const	char	*ft_read_text(t_print *tp, const char *format)
 {
 	char	*next;

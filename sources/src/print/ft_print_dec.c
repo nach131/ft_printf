@@ -16,15 +16,19 @@
 
 #include "ft_printf.h"
 
-void	ft_putnbr_dec(int n, t_print *tp)
+static void	ft_putnbr_dec(int n, t_print *tp)
 {
 	if (n < 0)
 	{
 		if (n == -2147483648)
-			ft_write_str("-2147483648", tp);
+			{
+				ft_putstr("-2147483648", tp);
+				// ft_write_str("-2147483648", tp);
+			// tp->len += 1;
+				}
 		else
 		{
-			ft_write_str("-", tp);
+			ft_write('-', tp);
 			n = -n;
 		}	
 	}
