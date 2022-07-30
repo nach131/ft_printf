@@ -14,7 +14,7 @@
 
 <!-- ![libft](https://github.com/nach131/42Barcelona/blob/main/images/125.png) -->
 
-<h3 align="center">Proteccion Write</h3>
+<h3 align="center">Write protected</h3>
 
 ## Synopsis
 
