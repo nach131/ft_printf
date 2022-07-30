@@ -27,12 +27,4 @@ void	ft_print_str(va_list arg, t_print *tp)
 	}
 	else
 		ft_putstr(s, tp);
-	// if(tp->widht >= 1)
-	// {
-	// 	tp->len += tp->widht;
-	// }
-		// printf("\e[3;31mlen %d \e[0m\n", tp->len);
-		// printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
-		// // printf("\e[5;32mlen %d\e[0m\n", tp->len);
-
 }

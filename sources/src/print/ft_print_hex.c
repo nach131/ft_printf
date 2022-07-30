@@ -15,7 +15,6 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 void	ft_print_hex(va_list arg, t_print *tp, char *hexa)
 {

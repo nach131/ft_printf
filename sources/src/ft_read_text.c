@@ -35,21 +35,10 @@ const	char	*ft_read_text(t_print *tp, const char *format)
 	next = ft_strchr(format, '%');
 
 	if (next)
-	{
 		tp->widht = next - format;
-		}
 	else
 		tp->widht = ft_strlen(format);
 	ft_write_str(format, tp);
-
-// 	if (tp->widht > 1)
-// {		
-
-// 		// tp->len += tp->widht;
-// 		// cambiado para que no sume
-// 		tp->len = tp->widht;
-// 		}
-
 	while (*format && *format != '%')
 		++format;
 	return (format);

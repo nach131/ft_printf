@@ -34,7 +34,6 @@ void		ft_print_dec(va_list arg, t_print *tp);
 void		ft_print_str(va_list arg, t_print *tp);
 void		ft_print_ptr(va_list arg, t_print *tp);
 void		ft_write(char c, t_print *tp);
-// void		ft_write_str(const char *c, t_print *tp);
 void		ft_putstr(const char *s, t_print *tp);
 
 #endif

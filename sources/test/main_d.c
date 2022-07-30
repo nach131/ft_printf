@@ -21,6 +21,10 @@
 #include "inc/ft_printf.h"
 #include <limits.h>
 
+		// printf("\e[3;33mcount ini %d \e[0m\n", count);
+			// printf("\e[3;31mlen %d \e[0m\n", tp->len);
+			// printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
+
 int	main()
 {
 	// printf(" %li %li %lu\n", LONG_MAX, LONG_MIN, ULONG_MAX);
