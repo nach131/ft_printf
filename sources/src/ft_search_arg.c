@@ -15,7 +15,6 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
 {
