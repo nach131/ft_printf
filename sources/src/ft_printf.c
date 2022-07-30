@@ -14,9 +14,6 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-// #include <stdarg.h>
-// #include <unistd.h>
-
 #include "ft_printf.h"
 #include "libft.h"
 

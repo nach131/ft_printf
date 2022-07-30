@@ -21,11 +21,7 @@ static void	ft_putnbr_dec(int n, t_print *tp)
 	if (n < 0)
 	{
 		if (n == -2147483648)
-			{
 				ft_putstr("-2147483648", tp);
-				// ft_write_str("-2147483648", tp);
-			// tp->len += 1;
-				}
 		else
 		{
 			ft_write('-', tp);
@@ -44,15 +40,4 @@ void	ft_print_dec(va_list arg, t_print *tp)
 
 	d = va_arg(arg, int);
 	ft_putnbr_dec(d, tp);
-	// if (tp->len >= tp->widht)
-	// 	{
-	// 		tp->len += tp->widht;
-	// 		printf("\e[1;33mlen %d \e[0m\n", tp->len);
-	// 		printf("\e[1;33mwidht %d \e[0m\n", tp->widht);
-	// 	}
-
-		// 	printf("\e[3;31mlen %d \e[0m\n", tp->len);
-		// printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
-	// ft_putnbr_fd(d, 1);
-	// tp->len += ft_intlen_dec(d);
 }

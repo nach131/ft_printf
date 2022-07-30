@@ -22,7 +22,6 @@ void	ft_print_hex(va_list arg, t_print *tp, char *hexa)
 	unsigned int	x;
 	int				res[128];
 	int				i;
-	// int				count;
 
 	x = va_arg(arg, unsigned int);
 	i = 0;
@@ -33,13 +32,9 @@ void	ft_print_hex(va_list arg, t_print *tp, char *hexa)
 		i++;
 	}
 	res[i] = hexa[x];
-	// count = 0;
 	while (i >= 0)
 	{
-		// ft_putchar_fd(res[i], 1);
 		ft_write(res[i], tp);
 		i--;
-		// count++;
 	}
-	// tp->len += count;
 }
