@@ -40,6 +40,6 @@ const	char	*ft_read_text(t_print *tp, const char *format)
 		tp->widht = ft_strlen(format);
 	ft_write_str(format, tp);
 	while (*format && *format != '%')
-		++format;
+		format++;
 	return (format);
 }

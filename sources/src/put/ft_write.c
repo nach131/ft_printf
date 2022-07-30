@@ -23,7 +23,6 @@ void	ft_write(char c, t_print *tp)
 		if (write(1, &c, 1) == -1)
 		{
 			tp->error = 1;
-			if (tp->len == 0)
 			tp->len = -1;
 		}
 		else
