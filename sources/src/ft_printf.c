@@ -24,7 +24,6 @@ int	ft_printf(const char *format, ...)
 
 	va_start(arg, format);
 	tp.len = 0;
-	tp.len_str = 0;
 	tp.widht = 0;
 	tp.error = 0;
 
@@ -42,20 +41,10 @@ int	ft_printf(const char *format, ...)
 		else
 		{		
 		format = ft_read_text(&tp, format);
-		tp.len_str += tp.widht;
-		tp.len += tp.widht;
+		if(!tp.error)
+			tp.len += tp.widht;
 		}
-
-//=====no esta haciendo nada===========================================================================
-		// if (!format)
-		// {
-		// 	if(write(1, "(null)", 6) == -1)
-		// 		return (-1);
-		// 	va_end(arg);
-		// 	return (tp.len);
-		// }
 	}
-
 	va_end(arg);
 	return (tp.len);
 }
