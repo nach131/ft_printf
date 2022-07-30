@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:41:13 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/26 14:05:11 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2022/07/30 15:49:55 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 
 static void	ft_write_str(const char *c, t_print *tp)
 {
-if (!tp->error)
-{	
-	if (write(1, c, tp->widht) == -1)
+	if (!tp->error)
+	{	
+		if (write(1, c, tp->widht) == -1)
 		{
 			tp->error = 1;
 			tp->len = -1;
@@ -32,8 +32,8 @@ if (!tp->error)
 const	char	*ft_read_text(t_print *tp, const char *format)
 {
 	char	*next;
-	next = ft_strchr(format, '%');
 
+	next = ft_strchr(format, '%');
 	if (next)
 		tp->widht = next - format;
 	else

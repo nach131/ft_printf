@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 20:40:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/20 17:26:01 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2022/07/30 15:47:53 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ int	ft_printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format == '%')
-			{
-				format = ft_search_arg(arg, format + 1, &tp);
-			}
+			format = ft_search_arg(arg, format + 1, &tp);
 		else if (tp.len == -1)
 		{
 			va_end(arg);
@@ -38,9 +36,9 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{		
-		format = ft_read_text(&tp, format);
-		if(!tp.error)
-			tp.len += tp.widht;
+			format = ft_read_text(&tp, format);
+			if (!tp.error)
+				tp.len += tp.widht;
 		}
 	}
 	va_end(arg);

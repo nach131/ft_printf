@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 19:12:40 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/20 17:50:58 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2022/07/30 15:51:12 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_putnbr_dec(int n, t_print *tp)
 	if (n < 0)
 	{
 		if (n == -2147483648)
-				ft_putstr("-2147483648", tp);
+			ft_putstr("-2147483648", tp);
 		else
 		{
 			ft_write('-', tp);
