@@ -21,4 +21,17 @@
 
 	int printf(const char *format, ...);
 
+<div align="center">
 
+%  | type |
+---|------|
+%c | character				|
+%s | string					|
+%p | pointer				|
+%d | decimal signed integer	|
+%i | integer				|
+%u | unsigned integer		|
+%x | hex integer (lowercase)|
+%X | hex integer (uppercase)|
+%% | just the %				|
+</div>
