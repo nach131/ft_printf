@@ -39,22 +39,24 @@ int	main()
 	// int char_5_2 = printf(" %%   %%   %% \n");
 	// printf("\nchar_5_1 = %d\nchar_5_2 = %d\n", char_5_1, char_5_2);
 
-	// printf("-------	d T23------\n");
-	// int dec_23_1 = ft_printf(" %d \n", INT_MIN);
-	// int dec_23_2 = printf(" %d \n", INT_MIN);
-	// printf("\ndec_23_1 = %d\ndec_23_2 = %d\n", dec_23_1, dec_23_2);
-	
 	printf("-------	d T23------\n");
-	int str_23_1 = ft_printf(" %d \n", -2147483648);
-	int str_23_2 = printf(" %d \n", -2147483648);
-	printf("\nstr_23_1 = %d\nstr_23_2 = %d\n", str_23_1, str_23_2);
+	int dec_23_1 = ft_printf(" %d \n", INT_MIN);
+	int dec_23_2 = printf(" %d \n", INT_MIN);
+	printf("\ndec_23_1 = %d\ndec_23_2 = %d\n", dec_23_1, dec_23_2);
 
+	printf("-------	todos los formatos------\n");
+	int todo_1 = ft_printf("dgs%ixx\n", 10);
+	int todo_2 = printf("dgs%ixx\n", 10);
+	printf("\ntodo_1 = %d\ntodo_2 = %d\n", todo_1, todo_2);
+	
+
+	
 //====================ok==================================================================
 	
-	printf("------Decimal-------\n");
-	int num = ft_printf("42 Barcelona %d\n", -42);
-	int num2 = printf("42 Barcelona %d\n", -42);
-	printf("\nstr = %d\nstr2 = %d\n", num, num2);
+	// printf("------Decimal-------\n");
+	// int num = ft_printf("42 Barcelona %d\n", -42);
+	// int num2 = printf("42 Barcelona %d\n", -42);
+	// printf("\nstr = %d\nstr2 = %d\n", num, num2);
 
 	// printf("------No format-------\n");
 	// int ptr1 = ft_printf("\x01\x02\x07\v\x08\f\r\n");

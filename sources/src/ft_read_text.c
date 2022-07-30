@@ -28,14 +28,30 @@ if (!tp->error)
 			// if(tp->len == 0) //esto no tenia mucho sentido
 				tp->len = -1;
 		}
-	else
-				tp->len += 1;
+	// else
+	// 			tp->len += 1;
 	}
-	if(tp->widht > 1)
-	{	
-		tp->len = tp->widht;
-		}
+	// if(tp->widht > 1)
+	// {	
+	// 	tp->len = tp->widht;
+	// 	}
 }
+
+// static void	tomate(const char *c, t_print *tp)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (c[i] != '\0')
+// 	{
+// 		write(1, &c[i], 1);
+// 		i++;
+// 	}
+// 	printf("\e[3;31mlen %d \e[0m\n", tp->len);
+// 	printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
+// }
+
+
 
 const	char	*ft_read_text(t_print *tp, const char *format)
 {
@@ -43,14 +59,17 @@ const	char	*ft_read_text(t_print *tp, const char *format)
 	next = ft_strchr(format, '%');
 
 	if (next)
+	{
 		tp->widht = next - format;
+		}
 	else
-			tp->widht = ft_strlen(format);
+		tp->widht = ft_strlen(format);
+		// tomate(format, tp);
 	ft_write_str(format, tp);
 
 // 	if (tp->widht > 1)
 // {		
-// 		// printf("\e[3;31m %d \e[0m\n", tp->widht);
+
 // 		// tp->len += tp->widht;
 // 		// cambiado para que no sume
 // 		tp->len = tp->widht;
@@ -62,5 +81,7 @@ const	char	*ft_read_text(t_print *tp, const char *format)
 		// printf("\e[3;31mlen %d \e[0m\n", tp->len);
 		// printf("\e[1;34mwidht %d \e[0m\n", tp->widht);
 		// printf("\e[3;33m len str:%d \e[0m\n", tp->len_str);
+
+
 	return (format);
 }
