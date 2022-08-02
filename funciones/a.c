@@ -32,8 +32,8 @@ void	foo(char *fmt, ...){
 
 int main(void){
 
-	char ch[] = "s";
-//	foo(ch, 'a','s');
+	char ch[] = "sas3";
+	// foo(ch, 'a','s');
 	foo(ch);
 	foo("5 de re");
 }
