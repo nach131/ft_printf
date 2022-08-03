@@ -12,3 +12,5 @@
 sources/obj/*
 sources/libft/obj/*
 *.a
+.env
+node_modules/
