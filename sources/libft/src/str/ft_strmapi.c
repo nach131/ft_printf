@@ -13,11 +13,11 @@
 /* ╔════════════════════════════════════════════════════════════════════════╗ */
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
-// Aplica la función ’f’ a cada caracter de la string ’s’ para crear la nueva
+// Aplica la función ’f’ a cada carácter de la string ’s’ para crear la nueva
 // string, resultado de aplicar sucesivas veces ’f’ (utilizando malloc(3)).
-// A esta función se le pasará el índice del caracter iterado.
+// A esta función se le pasará el índice del carácter iterado.
 //	#1. La string que iterar.
-//	#2. Un puntero a la función que aplicar a cada caracter.
+//	#2. Un puntero a la función que aplicar a cada carácter.
 
 #include"libft.h"
 
@@ -54,3 +54,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 //	printf("%c\n", funcion(1, 'X'));
 //	printf("\t%s\n", ft_strmapi(str, funcion));
 //}
+//============================================================================
+// Suma 1 al valor de char
+// Y
+// 	43"Eewiltxxl

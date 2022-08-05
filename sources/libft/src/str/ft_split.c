@@ -14,6 +14,13 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
+//  Reserva con malloc(3) y devuelve un array de
+//  strings obtenido al separar ’s’ con el carácter ’c’
+//  como delimitador. El array debe terminar en NULL.
+// 
+// #1. La string a separar.
+// #2. El carácter delimitador.
+
 #include "libft.h"
 
 int	ft_len_words(char const *s, char c)
@@ -111,3 +118,10 @@ char	**ft_split(char const *s, char c)
 // 		i++;
 // 	}
 // }
+//======================================================================
+// main:  , ascii: 32
+// 42
+// Barcelona
+// is
+// the
+// best

@@ -16,6 +16,7 @@
 // Reserva con malloc(3) y devuelve una string que representa el número dado
 // como argumento. Los números negativos deben gestionarse correctamente.
 // #1. El entero a convertir.
+
 #include "libft.h"
 
 int	ft_num_digitos(int n)

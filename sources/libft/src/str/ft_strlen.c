@@ -30,6 +30,8 @@ int	ft_strlen(const char *s)
 // int	main(void)
 // {
 // 	char w[20]="42Barcelona";
-// 
+
 // 	printf("'%s' tiene %d caracteres\n",w, ft_strlen(w));
 // }
+
+// '42Barcelona' tiene 11 caracteres
