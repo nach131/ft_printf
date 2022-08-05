@@ -51,10 +51,6 @@ OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 all: DIR LIBFS $(NAME)
 
-tokemo:
-			@echo $(INCLUDES)/
-			@cat $(INCLUDES)/ft_printf.h
-
 LIBFS:
 			@make -C $(LIBFT)
 
