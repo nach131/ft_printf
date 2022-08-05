@@ -2,7 +2,7 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "inc/ft_printf.h"
+#include "../sources/inc/ft_printf.h"
 #include <limits.h>
 
 int	main()
