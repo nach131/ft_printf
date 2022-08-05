@@ -34,6 +34,8 @@ const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
 		ft_print_hex(arg, tp, "0123456789abcdef");
 	else if (*format == 'X')
 		ft_print_hex(arg, tp, "0123456789ABCDEF");
+	else if (*format == '0')
+		tp->zero = 1;
 	format++;
 	return (format);
 }

@@ -39,5 +39,6 @@ void	ft_print_dec(va_list arg, t_print *tp)
 	int	d;
 
 	d = va_arg(arg, int);
+	// poner aqui funcion write bonus
 	ft_putnbr_dec(d, tp);
 }

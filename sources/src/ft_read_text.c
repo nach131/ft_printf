@@ -29,13 +29,23 @@ static void	ft_write_str(const char *c, t_print *tp)
 	}
 }
 
-const	char	*ft_read_text(t_print *tp, const char *format)
+const	char	*ft_read_text(t_print *tp, const char *format, va_list arg)
 {
 	char	*next;
 
 	next = ft_strchr(format, '%');
 	if (next)
 		tp->widht = next - format;
+	else if (tp->zero)
+		{
+			while(*format != 'd' )
+			{
+		 		tp->to_write = format;
+				format++; 
+			}
+		tp->zero = 0;
+		format = ft_search_arg(arg, format, tp);
+		}
 	else
 		tp->widht = ft_strlen(format);
 	ft_write_str(format, tp);
