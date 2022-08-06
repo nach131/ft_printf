@@ -23,8 +23,10 @@ typedef struct s_print
 	int		widht;
 	int		error;
 	int		zero;
+	int		num_zero;
 	int		min;
-	const char	*to_write;
+	// const char	*to_write;
+	char	*to_write;
 }	t_print;
 
 int			ft_printf(const char *format, ...);
@@ -38,5 +40,6 @@ void		ft_print_str(va_list arg, t_print *tp);
 void		ft_print_ptr(va_list arg, t_print *tp);
 void		ft_write(char c, t_print *tp);
 void		ft_putstr(const char *s, t_print *tp);
+void		ft_rep_write(char ch, t_print *tp);
 
 #endif

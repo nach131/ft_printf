@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_dec.c                                     :+:      :+:    :+:   */
+/*   conca_tp.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 19:12:40 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/30 15:51:12 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/08/06 00:21:59 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/08/06 00:42:17 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,28 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "ft_printf.h"
+#include <stdarg.h>
+#include <stdio.h>
 
-static void	ft_putnbr_dec(int n, t_print *tp)
+typedef struct s_prueba
 {
-	if (n < 0)
-	{
-		if (n == -2147483648)
-			ft_putstr("-2147483648", tp);
-		else
-		{
-			// aki los ceros
-				ft_write('-', tp);
-				tp->len -= 1;
-				n = -n;
-			if(tp->num_zero)
-				ft_rep_write('0', tp);
-		}	
-	}
-	if(tp->num_zero)	
-			ft_rep_write('0', tp);
-	if (n > 9)
-		ft_putnbr_dec(n / 10, tp);
-	if (n != -2147483648)
-		ft_write ('0' + n % 10, tp);
-}
+	int	len;
+	char	*str;
+} t_prueba;
 
-void	ft_print_dec(va_list arg, t_print *tp)
-{
-	int	d;
+int	main(void){
+	t_prueba		tp;
+	const char	*str;
+	char					ch = 'z';
 
-	d = va_arg(arg, int);
-	ft_putnbr_dec(d, tp);
+	str = &ch;
+
+	tp.len = 0;
+	// tp.str = "hola";
+	tp.str = &str;
+
+	printf("%d\n", tp.len) ;
+	printf("%c\n", ch);
+	printf("%s\n", tp.str);
 }
+ 

@@ -37,21 +37,21 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (res);
 }
 
-//int	main(void)
-//{
-//	char	str1[] = "42";
-////	char	str2[5] ={'\0','\0'};
-//	char	str2[] = " Barcelona";
-//	char	*res;
-//
-////	str1[0] = '\0';
-////	str2[0] = '\0';
-//
-//	res = ft_strjoin(str1, str2);
-//	printf("res: %s\n", res);
-////	int	x;
-////	x = sizeof(res);
-////	printf("size res: %i\n", x);
-//}
+// int	main(void)
+// {
+// 	char	str1[] = "42";
+// //	char	str2[5] ={'\0','\0'};
+// 	char	str2[] = " Barcelona";
+// 	char	*res;
+
+// //	str1[0] = '\0';
+// //	str2[0] = '\0';
+
+// 	res = ft_strjoin(str1, str2);
+// 	printf("res: %s\n", res);
+// //	int	x;
+// //	x = sizeof(res);
+// //	printf("size res: %i\n", x);
+// }
 
 // res: 42 Barcelona
