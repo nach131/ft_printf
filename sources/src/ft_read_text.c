@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:41:13 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/30 15:49:55 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2022/08/06 23:28:42 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,20 +60,20 @@ const	char	*ft_read_text(t_print *tp, const char *format, va_list arg)
 	char	*next;
 
 	next = ft_strchr(format, '%');
-	if (next)
-		tp->widht = next - format;
-	else if (tp->zero)
-		{
+	if (tp->zero)
+	{
 		tp->zero = 0;
-			while(*format != 'd' ) // poner las demas...
-			{
-				ft_memcpy_read(tp->to_write, format);
-				format++; 
-			}
+		while(*format != 'd' ) // poner las demas...
+		{
+			ft_memcpy_read(tp->to_write, format);
+			format++; 
+		}
 		tp->num_zero = ft_atoi(tp->to_write);
 		tp->to_write = "";
 		format = ft_search_arg(arg, format, tp);
-		}
+	}
+	if (next)
+		tp->widht = next - format;
 	else
 		tp->widht = ft_strlen(format);
 	ft_write_str(format, tp);

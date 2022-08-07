@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_dec.c                                     :+:      :+:    :+:   */
+/*   ft_read_text.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 19:12:40 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/30 15:51:12 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/07/16 12:41:13 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/07/30 15:49:55 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,31 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
+#include "libft.h"
 
-static void	ft_putnbr_dec(int n, t_print *tp)
+static void	ft_write_str(const char *c, t_print *tp)
 {
-	if (n < 0)
-	{
-		if (n == -2147483648)
-			ft_putstr("-2147483648", tp);
-		else
+	if (!tp->error)
+	{	
+		if (write(1, c, tp->widht) == -1)
 		{
-			// aki los ceros
-				ft_write('-', tp);
-				tp->len -= 1;
-				n = -n;
-			// if(tp->num_zero)
-			// 	ft_rep_write('0', tp);
-		}	
+			tp->error = 1;
+			tp->len = -1;
+		}
 	}
-	if(tp->num_zero)	
-			ft_rep_write('0', tp);
-	if (n > 9)
-		ft_putnbr_dec(n / 10, tp);
-	if (n != -2147483648)
-		ft_write ('0' + n % 10, tp);
 }
 
-void	ft_print_dec(va_list arg, t_print *tp)
+const	char	*ft_read_text(t_print *tp, const char *format)
 {
-	int	d;
+	char	*next;
 
-	d = va_arg(arg, int);
-	ft_putnbr_dec(d, tp);
+	next = ft_strchr(format, '%');
+	if (next)
+		tp->widht = next - format;
+	else
+		tp->widht = ft_strlen(format);
+	ft_write_str(format, tp);
+	while (*format && *format != '%')
+		format++;
+	return (format);
 }
