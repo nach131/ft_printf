@@ -29,32 +29,6 @@ static void	ft_write_str(const char *c, t_print *tp)
 	}
 }
 
-void	*ft_memcpy_read(void *dest, const void *src)
-{
-	char	*de;
-	char	*sr;
-	size_t	i;
-	int			len_dest;
-
-	de = (char *)dest;
-	sr = (char *)src;
-	len_dest = ft_strlen(de);
-	i = 0;
-	if (sr || de)
-	{
-		while (!i)
-		{
-			if (len_dest == 0)
-				de[i] = sr[i];
-			else
-				de[len_dest] = sr[i];
-			i++;
-		}
-		return (de);
-	}
-	return (NULL);
-}
-
 const	char	*ft_read_text(t_print *tp, const char *format, va_list arg)
 {
 	char	*next;
@@ -65,11 +39,11 @@ const	char	*ft_read_text(t_print *tp, const char *format, va_list arg)
 		tp->zero = 0;
 		while(*format != 'd' ) // poner las demas...
 		{
-			ft_memcpy_read(tp->to_write, format);
+			ft_memcpy_bonus(tp->to_arg, format);
 			format++; 
 		}
-		tp->num_zero = ft_atoi(tp->to_write);
-		tp->to_write = "";
+		tp->num_zero = ft_atoi(tp->to_arg);
+		tp->to_arg = "";
 		format = ft_search_arg(arg, format, tp);
 	}
 	if (next)
@@ -77,7 +51,10 @@ const	char	*ft_read_text(t_print *tp, const char *format, va_list arg)
 	else
 		tp->widht = ft_strlen(format);
 	ft_write_str(format, tp);
+	
 	while (*format && *format != '%')
+		{
 		format++;
+		}
 	return (format);
 }

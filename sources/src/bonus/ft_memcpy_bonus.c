@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prueba_cat.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/06 15:11:35 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/08/06 15:13:29 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/08/08 13:10:04 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/08/08 13:10:05 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,31 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "../sources/libft/inc/libft.h"
+#include "ft_printf.h"
+#include "libft.h"
 
- int main(void)
- {
-    char src[] = "Barcelona";
-    char dst[15] = "42 ";
-    size_t n;
-    int r;
+void	*ft_memcpy_bonus(void *dest, const void *src)
+{
+	char	*de;
+	char	*sr;
+	size_t	i;
+	int			len_dest;
 
-    n = 13;
-    r = ft_strlcat(dst, src, n);
-    printf("src: %s\n dst: %s\n size: %zu\nretorno: %d\n", src, dst, n, r);
- }
+	de = (char *)dest;
+	sr = (char *)src;
+	len_dest = ft_strlen(de);
+	i = 0;
+	if (sr || de)
+	{
+		while (!i)
+		{
+			if (len_dest == 0)
+				de[i] = sr[i];
+			else
+				de[len_dest] = sr[i];
+			i++;
+		}
+		return (de);
+	}
+	return (NULL);
+}
