@@ -50,7 +50,7 @@ const char *ft_read_text(t_print *tp, const char *format, va_list arg)
 		tp->widht = next - format;
 	else
 		tp->widht = ft_strlen(format);
-	tp->to_write = ft_strjoin(tp->to_write, ft_constchar_to_str_bonus(format, tp->widht));
+	tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(format, tp->widht));
 	// ft_write_str(format, tp);
 
 	while (*format && *format != '%')

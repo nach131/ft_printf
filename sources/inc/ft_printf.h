@@ -41,6 +41,6 @@ void		ft_write(char c, t_print *tp);
 void		ft_putstr(const char *s, t_print *tp);
 void		ft_rep_write(char ch, t_print *tp);
 void	*ft_memcpy_bonus(void *dest, const void *src);
-char *ft_constchar_to_str_bonus(const char *s, int n);
+char *ft_char_to_str(const char *s, int n);
 
 #endif

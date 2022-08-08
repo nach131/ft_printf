@@ -38,16 +38,19 @@ int	main(void)
 	printf("-------------------\n");
 
 }
-
+// if(n >= 1 && n <= 9)
 // %7d: 42     42|			7 en total se llena con espacios
 // %7d: -42    -42|			a la izq
 // -------------------
+//	if( == '-')
 // %-7d: 4242     |			7 en total se llena con espacios 
 // %-7d: -42-42    |		a la derecha
 // -------------------
+// if( == '.')
 // %.7d: 420000042| 		7 total llenado de 0
 // %.7d: -42-0000042|		7 total incluido - llenado de cero
 // -------------------
+// if( === '0')
 // %07d: 420000042| 		7 total llenado de 0
 // %07d: -42-000042|		7 total incluido - llenado de cero
 // -------------------

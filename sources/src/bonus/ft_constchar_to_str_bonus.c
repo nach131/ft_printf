@@ -17,7 +17,7 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-char *ft_constchar_to_str_bonus(const char *s, int n)
+char *ft_char_to_str(const char *s, int n)
 {
     if (!s)
         return NULL;
