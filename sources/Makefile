@@ -41,7 +41,7 @@ PUT_DIR = put/
 PUT_FILES = ft_putstr ft_write
 
 BONUS_DIR = bonus/
-BONUS_FILES = ft_rep_write ft_constchar_to_str_bonus ft_memcpy_bonus
+BONUS_FILES = ft_rep_write ft_constchar_to_str_bonus ft_memcpy_bonus ft_read_bonus
 
 SRC_FILES = ft_printf ft_search_arg ft_read_text
 SRC_FILES += $(addprefix $(PRINT_DIR), $(PRINT_FILES))

@@ -41,8 +41,7 @@ int	ft_printf(const char *format, ...)
 		else
 		{		
 			format = ft_read_text(&tp, format, arg);
-			if (!tp.error)
-				tp.len += tp.widht;
+		
 		}
 	}
 	va_end(arg);

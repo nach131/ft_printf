@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_text.c                                     :+:      :+:    :+:   */
+/*   const_to_const.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 12:41:13 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/08/06 23:28:42 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/08/06 00:21:59 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/08/08 21:27:50 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,60 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "ft_printf.h"
-#include "libft.h"
-
-// if (tp->zero)
-// {
-// 	tp->zero = 0;
-// 	while (*format != 'd') // poner las demas...
-// 	{
-// 		ft_memcpy_bonus(tp->to_arg, format);
-// 		format++;
-// 	}
-// 	tp->num_zero = ft_atoi(tp->to_arg);
-// 	tp->to_arg = "";
-// 	format = ft_search_arg(arg, format, tp);
-// }
-
-const char *ft_read_text(t_print *tp, const char *format, va_list arg)
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include "../sources/libft/inc/libft.h"
+typedef struct s_print
 {
-	char *next;
+    char *to_write;
+    char *to_arg;
+    char *total;
+    const char *toma;
+} t_print;
 
-	next = ft_strchr(format, '%');
+static int ft_len_esto(const char *s)
+{
+    int i;
 
-	if (next)
-		tp->widht = next - format;
-	else
-		tp->widht = ft_strlen(format);
-	if (!tp->zero)
-		tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(format, tp->widht));
-	// ft_write_str(format, tp);
+    i = 0;
+    if (!s)
+        return (0);
+    while (*s != 'd') // AKI TODAS LAS VARIABLES
+    {
+        s++;
+        i++;
+    }
+    return (i);
+}
 
-	next = "";
-	tp->widht = 0;
-	if (tp->zero)
-		format = ft_read_bonus(tp, format, arg);
-	while (*format && *format != '%')
-	{
-		format++;
-	}
-	return (format);
+int main(void)
+{
+    t_print tp;
+    char *res = NULL;
+    int i;
+    int len;
+    const char *esto = "122daki\n";
+
+    tp.toma = esto;
+
+    // tp.total = ft_strjoin(tp.to_arg, constchar_to_str(esto));
+    // tp.total = ft_strjoin(tp.total, tp.to_write);
+    len = ft_len_esto(esto);
+
+    // AHORA constchar_to_str
+
+    // while (*esto)
+    // {
+
+    //     write(1, esto,1);
+    //     esto++;
+    // }
+    while (*tp.toma)
+    {
+        write(1, tp.toma, 1);
+        tp.toma++;
+    }
 }
