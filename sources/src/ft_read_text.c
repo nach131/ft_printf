@@ -17,40 +17,36 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-// if (tp->zero)
-// {
-// 	tp->zero = 0;
-// 	while (*format != 'd') // poner las demas...
-// 	{
-// 		ft_memcpy_bonus(tp->to_arg, format);
-// 		format++;
-// 	}
-// 	tp->num_zero = ft_atoi(tp->to_arg);
-// 	tp->to_arg = "";
-// 	format = ft_search_arg(arg, format, tp);
-// }
-
-const char *ft_read_text(t_print *tp, const char *format, va_list arg)
+void	ft_read_text(t_print *tp, va_list arg)
 {
+int	ch = va_arg(arg, int); //quitar
+printf("%d",ch);
 	char *next;
 
-	next = ft_strchr(format, '%');
+	next = ft_strchr(tp->format, '%');
 
 	if (next)
-		tp->widht = next - format;
+		tp->widht = next - tp->format;
 	else
-		tp->widht = ft_strlen(format);
-	if (!tp->zero)
-		tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(format, tp->widht));
-	// ft_write_str(format, tp);
+	{
+			tp->widht = ft_strlen(tp->format);
+		// creo que aki join resto...
+		}
+	if (!tp->flag_zero)
+		tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(tp->format, tp->widht));
 
 	next = "";
 	tp->widht = 0;
-	if (tp->zero)
-		format = ft_read_bonus(tp, format, arg);
-	while (*format && *format != '%')
+	// if (tp->flag_zero)
+	// 	// ft_read_bonus(tp, arg);
+	// else if (*tp->format == '%')
+	// 	{
+	// 		tp->format++;
+	// 		ft_search_arg(arg, tp);
+	// 	}
+	while (*tp->format && *tp->format != '%')
 	{
-		format++;
+		tp->format++;
 	}
-	return (format);
+
 }

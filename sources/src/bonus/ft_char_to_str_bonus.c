@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_char_to_str_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 12:20:26 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/27 12:22:43 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/08/08 17:17:45 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/08/08 17:17:47 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,29 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putstr(const char *s, t_print *tp)
+char *ft_char_to_str(const char *s, int n)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		ft_write(s[i], tp);
-		i++;
-	}
+    if (!s)
+        return NULL;
+    int i;
+    char *res = NULL;
+    res = (char *)malloc(n + 1);
+    if (!res)
+    {
+       // marcar algun error
+			return NULL;
+    }
+    else
+    {
+        i = 0;
+        while (i < n)
+        {
+            res[i] = s[i];
+            i++;
+        }
+        res[i] = '\0';
+        return res;
+    }
 }

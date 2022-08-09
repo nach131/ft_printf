@@ -15,27 +15,33 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
+#include "libft.h"
 
-const	char	*ft_search_arg(va_list arg, const char *format, t_print *tp)
+void ft_search_arg(va_list arg, t_print *tp)
 {
-	if (*format == '%')
-		ft_write('%', tp);
-	else if (*format == 'c')
-		ft_print_char(arg, tp);
-	else if (*format == 's')
-		ft_print_str(arg, tp);
-	else if (*format == 'p')
-		ft_print_ptr(arg, tp);
-	else if (*format == 'd' || *format == 'i')
-		ft_print_dec(arg, tp);
-	else if (*format == 'u')
-		ft_print_unsint(arg, tp);
-	else if (*format == 'x')
-		ft_print_hex(arg, tp, "0123456789abcdef");
-	else if (*format == 'X')
-		ft_print_hex(arg, tp, "0123456789ABCDEF");
-	else if (*format == '0')
-		tp->zero = 1;
-	format++;
-	return (format);
+	if (*tp->format == '%')
+		tp->to_write = ft_strjoin(tp->to_write, "%");
+	int c;
+	c = va_arg(arg, int);
+	// else if (*tp->format == 'c')
+	// 	ft_print_char(arg, tp);
+	// else if (*tp->format == 's')
+	// 	ft_print_str(arg, tp);
+	// else if (*tp->format == 'p')
+	// 	ft_print_ptr(arg, tp);
+	// else if (*tp->format == 'd' || *tp->format == 'i')
+	// 	ft_print_dec(arg, tp);
+	// else if (*tp->format == 'u')
+	// 	ft_print_unsint(arg, tp);
+	// else if (*tp->format == 'x')
+	// 	ft_print_hex(arg, tp, "0123456789abcdef");
+	// else if (*tp->format == 'X')
+	// 	ft_print_hex(arg, tp, "0123456789ABCDEF");
+	// else if (*tp->format == '0')
+	// {
+	// 	tp->flag_zero = 1;
+	// 	ft_read_text(tp, arg);
+	// }
+	tp->format++;
+	// return (tp->format);
 }

@@ -15,35 +15,37 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf(const char *format, ...)
+int ft_printf(const char *format, ...)
 {
-	t_print	tp;
-	va_list	arg;
+	t_print tp;
+	va_list arg;
+	int len;
 
 	va_start(arg, format);
-	tp.len = 0;
+	tp.format = format;
 	tp.widht = 0;
-	tp.error = 0;
-	tp.zero = 0;
+	tp.flag_error = 0;
+	tp.flag_zero = 0;
 	tp.num_zero = 0;
 	tp.to_arg = "";
 	tp.to_write = "";
-	while (*format)
+	tp.to_prev = "";
+	while (*tp.format)
 	{
-		if (*format == '%')
-			format = ft_search_arg(arg, format + 1, &tp);
-		else if (tp.len == -1)
+		if (*tp.format == '%')
 		{
-			va_end(arg);
-			return (-1);
+			tp.format++;
+			ft_search_arg(arg, &tp);
 		}
 		else
-		{		
-			format = ft_read_text(&tp, format, arg);
-		
+		{
+			ft_read_text(&tp, arg);
 		}
 	}
 	va_end(arg);
-	return (tp.len);
+	len = ft_strlen(tp.to_write);
+	ft_write(len, &tp);
+	return (len);
 }

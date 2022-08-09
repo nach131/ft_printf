@@ -16,16 +16,9 @@
 
 #include "ft_printf.h"
 
-void	ft_write(char c, t_print *tp)
+void	ft_write(int len, t_print *tp)
 {
-	if (!tp->error)
-	{	
-		if (write(1, &c, 1) == -1)
-		{
-			tp->error = 1;
-			tp->len = -1;
-		}
-		else
-			tp->len += 1;
-	}
+	if (!tp->flag_error)
+		if (write(1, tp->to_write, len) == -1)
+			tp->flag_error = 1;
 }

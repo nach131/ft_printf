@@ -32,18 +32,17 @@ static int ft_len(const char *s)
 	return (i);
 }
 
-const char *ft_read_bonus(t_print *tp, const char *format, va_list arg)
+void ft_read_bonus(t_print *tp, va_list arg)
 // void	ft_read_bonus(t_print *tp, const char *format, va_list arg)
 {
 	if (tp->zero)
 	{
 		tp->zero = 0;
-		tp->to_arg = ft_strjoin(tp->to_arg, ft_char_to_str(format, ft_len(format)));
+		tp->to_arg = ft_strjoin(tp->to_arg, ft_char_to_str(tp->format, ft_len(tp->format)));
 		tp->num_zero = ft_atoi(tp->to_arg);
 		tp->to_arg = "";
-		while (*format && *format != 'd') // AKI LAS DEMAS...
-			format++;
+		while (*tp->format && *tp->format != 'd') // AKI LAS DEMAS...
+			tp->format++;
 	}
-	format = ft_search_arg(arg, format, tp);
-	return (format);
+	ft_search_arg(arg, tp);
 }
