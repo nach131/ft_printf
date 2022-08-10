@@ -25,7 +25,7 @@ int ft_printf(const char *format, ...)
 
 	va_start(arg, format);
 	tp.format = format;
-	tp.widht = 0;
+	tp.flag_percent = 0;
 	tp.flag_error = 0;
 	tp.flag_zero = 0;
 	tp.num_zero = 0;

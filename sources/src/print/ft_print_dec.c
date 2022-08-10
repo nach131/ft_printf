@@ -61,4 +61,5 @@ void ft_print_dec(va_list arg, t_print *tp)
 		tp->to_write = ft_strjoin(tp->to_write, tp->to_prev);
 	}
 	tp->to_prev = "";
+	tp->flag_percent = 0;
 }

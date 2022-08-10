@@ -19,30 +19,29 @@
 
 void	ft_read_text(t_print *tp, va_list arg)
 {
-int	ch = va_arg(arg, int); //quitar
-printf("%d",ch);
+
 	char *next;
+	int	widht;
 
 	next = ft_strchr(tp->format, '%');
 
 	if (next)
-		tp->widht = next - tp->format;
-	else
-	{
-			tp->widht = ft_strlen(tp->format);
-		// creo que aki join resto...
-		}
-	if (!tp->flag_zero)
-		tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(tp->format, tp->widht));
+		widht = next - tp->format;
+	// else
+	// {
+	// 		widht = ft_strlen(tp->format);
+	// 	// creo que aki join resto...
+	// 	}
+	if (!tp->flag_percent)
+		tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(tp->format, widht));
 
-	next = "";
-	tp->widht = 0;
+	// next = "";
+	// widht = 0;
 	if (tp->flag_zero)
 		ft_read_bonus(tp, arg);
 	else if (*tp->format == '%')
 		{
 			tp->format++;
-			
 			ft_search_arg(arg, tp);
 		}
 	while (*tp->format && *tp->format != '%')

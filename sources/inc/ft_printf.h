@@ -19,7 +19,7 @@
 
 typedef struct s_print
 {
-	int		widht;
+	// int		widht;
 	int		flag_error;
 	int		flag_zero;
 	int		flag_percent;

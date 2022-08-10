@@ -19,8 +19,6 @@
 
 void ft_search_arg(va_list arg, t_print *tp)
 {
-	int c;
-	c = va_arg(arg, int);
 	if (*tp->format == '%')
 		tp->to_write = ft_strjoin(tp->to_write, "%");
 	// else if (*tp->format == 'c')
