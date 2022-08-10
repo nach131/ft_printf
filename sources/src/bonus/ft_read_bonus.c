@@ -45,5 +45,5 @@ void ft_read_bonus(t_print *tp, va_list arg)
 			tp->format++;
 // 	}
 	ft_search_arg(arg, tp);
-	ft_read_text(tp, arg);
+	ft_read_text(tp);
 }

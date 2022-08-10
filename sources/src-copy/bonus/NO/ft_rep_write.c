@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_text.c                                     :+:      :+:    :+:   */
+/*   bonus.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 12:41:13 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/08/06 23:28:42 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/08/06 19:08:39 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/08/06 19:09:05 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,30 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
-#include "libft.h"
 
-void	ft_read_text(t_print *tp)
+void	ft_rep_write(char ch, t_print *tp)
 {
-
-	char *next;
-	int	widht;
-
-	next = ft_strchr(tp->format, '%');
-
-	if (next)
-		widht = next - tp->format;
-	if (!tp->flag_percent)
-		tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(tp->format, widht));
-
-	
-	// else if (*tp->format == '%')
-	// 	{
-	// 		tp->format++;
-	// 		ft_search_arg(arg, tp);
-	// 	}
-	while (*tp->format && *tp->format != '%')
-	{
-		tp->format++;
-	}
-
+	while (tp->num_zero)
+		{
+			ft_write(ch, tp);
+			tp->num_zero -= 1;
+		}
 }
+
+
+// void	ft_rep_write(char ch, size_t n, t_print *tp)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (i < n)
+// 	{	
+// 		ft_write(ch, tp);
+// 		i++;
+// 	}
+// }
+
+// int	main(void)
+// {
+// 	super_write('0', 120);
+// }

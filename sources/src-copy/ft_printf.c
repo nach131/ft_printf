@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_text.c                                     :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 12:41:13 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/08/06 23:28:42 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/07/15 20:40:38 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/07/30 15:47:53 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,36 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-void	ft_read_text(t_print *tp)
+int ft_printf(const char *format, ...)
 {
+	t_print tp;
+	va_list arg;
+	int len;
 
-	char *next;
-	int	widht;
-
-	next = ft_strchr(tp->format, '%');
-
-	if (next)
-		widht = next - tp->format;
-	if (!tp->flag_percent)
-		tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(tp->format, widht));
-
-	
-	// else if (*tp->format == '%')
-	// 	{
-	// 		tp->format++;
-	// 		ft_search_arg(arg, tp);
-	// 	}
-	while (*tp->format && *tp->format != '%')
+	va_start(arg, format);
+	tp.format = format;
+	tp.flag_percent = 0;
+	tp.flag_error = 0;
+	tp.flag_zero = 0;
+	tp.num_zero = 0;
+	tp.to_arg = "";
+	tp.to_write = "";
+	tp.to_prev = "";
+	while (*tp.format)
 	{
-		tp->format++;
+		if (*tp.format == '%')
+		{
+			tp.format++;
+			tp.flag_percent = 1;
+			ft_search_arg(arg, &tp);
+		}
+		else
+		{
+			ft_read_text(&tp, arg);
+		}
 	}
-
+	va_end(arg);
+	len = ft_strlen(tp.to_write);
+	ft_write(len, &tp);
+	return (len);
 }

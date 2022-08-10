@@ -35,11 +35,8 @@ void ft_search_arg(va_list arg, t_print *tp)
 	// 	ft_print_hex(arg, tp, "0123456789abcdef");
 	// else if (*tp->format == 'X')
 	// 	ft_print_hex(arg, tp, "0123456789ABCDEF");
-	else if (*tp->format == '0')
-	{
-		tp->flag_zero = 1;
-		ft_read_text(tp, arg);
-	}
+	else 
+		ft_search_bonus(tp, arg);
 	tp->format++;
 	// return (tp->format);
 }

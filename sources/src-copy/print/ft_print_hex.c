@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_text.c                                     :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 12:41:13 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/08/06 23:28:42 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/07/19 19:31:51 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/07/21 19:59:45 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,25 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
-#include "libft.h"
 
-void	ft_read_text(t_print *tp)
+void	ft_print_hex(va_list arg, t_print *tp, char *hexa)
 {
+	unsigned int	x;
+	int				res[128];
+	int				i;
 
-	char *next;
-	int	widht;
-
-	next = ft_strchr(tp->format, '%');
-
-	if (next)
-		widht = next - tp->format;
-	if (!tp->flag_percent)
-		tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(tp->format, widht));
-
-	
-	// else if (*tp->format == '%')
-	// 	{
-	// 		tp->format++;
-	// 		ft_search_arg(arg, tp);
-	// 	}
-	while (*tp->format && *tp->format != '%')
+	x = va_arg(arg, unsigned int);
+	i = 0;
+	while (x >= 16)
 	{
-		tp->format++;
+		res[i] = hexa[x % 16];
+		x = x / 16;
+		i++;
 	}
-
+	res[i] = hexa[x];
+	while (i >= 0)
+	{
+		ft_write(res[i], tp);
+		i--;
+	}
 }

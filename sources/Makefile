@@ -6,7 +6,7 @@
 #    By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/12 19:20:00 by nmota-bu          #+#    #+#              #
-#    Updated: 2022/07/20 18:10:35 by nmota-bu         ###   ########.fr        #
+#    Updated: 2022/08/11 00:03:55 by nmota-bu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,8 @@ PUT_DIR = put/
 PUT_FILES = ft_write 
 
 BONUS_DIR = bonus/
-BONUS_FILES = ft_char_to_str_bonus ft_read_bonus ft_char_to_str_bonus
+BONUS_FILES = ft_char_to_str_bonus ft_read_bonus ft_char_to_str_bonus \
+			  ft_search_bonus
 
 SRC_FILES = ft_printf ft_search_arg ft_read_text
 SRC_FILES += $(addprefix $(PRINT_DIR), $(PRINT_FILES))

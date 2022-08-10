@@ -42,7 +42,7 @@ int ft_printf(const char *format, ...)
 		}
 		else
 		{
-			ft_read_text(&tp, arg);
+			ft_read_text(&tp);
 		}
 	}
 	va_end(arg);

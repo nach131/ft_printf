@@ -17,7 +17,7 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-void	ft_read_text(t_print *tp)
+void	ft_read_text(t_print *tp, va_list arg)
 {
 
 	char *next;
@@ -29,13 +29,13 @@ void	ft_read_text(t_print *tp)
 		widht = next - tp->format;
 	if (!tp->flag_percent)
 		tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(tp->format, widht));
-
-	
-	// else if (*tp->format == '%')
-	// 	{
-	// 		tp->format++;
-	// 		ft_search_arg(arg, tp);
-	// 	}
+	if (tp->flag_zero)
+		ft_read_bonus(tp, arg);
+	else if (*tp->format == '%')
+		{
+			tp->format++;
+			ft_search_arg(arg, tp);
+		}
 	while (*tp->format && *tp->format != '%')
 	{
 		tp->format++;

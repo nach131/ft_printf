@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_text.c                                     :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 12:41:13 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/08/06 23:28:42 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/07/19 15:29:49 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/07/19 17:31:32 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,11 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "ft_printf.h"
-#include "libft.h"
 
-void	ft_read_text(t_print *tp)
+void	ft_print_char(va_list arg, t_print *tp)
 {
+	int	c;
 
-	char *next;
-	int	widht;
-
-	next = ft_strchr(tp->format, '%');
-
-	if (next)
-		widht = next - tp->format;
-	if (!tp->flag_percent)
-		tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(tp->format, widht));
-
-	
-	// else if (*tp->format == '%')
-	// 	{
-	// 		tp->format++;
-	// 		ft_search_arg(arg, tp);
-	// 	}
-	while (*tp->format && *tp->format != '%')
-	{
-		tp->format++;
-	}
-
+	c = va_arg(arg, int);
+	ft_write(c, tp);
 }
