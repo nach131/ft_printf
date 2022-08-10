@@ -22,6 +22,7 @@ typedef struct s_print
 	int		widht;
 	int		flag_error;
 	int		flag_zero;
+	int		flag_percent;
 	int		num_zero;
 	char	*to_write;
 	char	*to_arg;
@@ -31,8 +32,11 @@ typedef struct s_print
 
 int		ft_printf(const char *format, ...);
 void ft_search_arg(va_list arg, t_print *tp);
+void	ft_read_text(t_print *tp, va_list arg);
 void	ft_write(int len, t_print *tp);
 char *ft_char_to_str(const char *s, int n);
-void	ft_read_text(t_print *tp, va_list arg);
+void ft_read_bonus(t_print *tp, va_list arg);
+void ft_print_dec(va_list arg, t_print *tp);
+char *ft_char_to_str(const char *s, int n);
 
 #endif

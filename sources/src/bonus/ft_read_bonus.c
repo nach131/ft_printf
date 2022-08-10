@@ -35,9 +35,9 @@ static int ft_len(const char *s)
 void ft_read_bonus(t_print *tp, va_list arg)
 // void	ft_read_bonus(t_print *tp, const char *format, va_list arg)
 {
-	if (tp->zero)
+	if (tp->flag_zero)
 	{
-		tp->zero = 0;
+		tp->flag_zero = 0;
 		tp->to_arg = ft_strjoin(tp->to_arg, ft_char_to_str(tp->format, ft_len(tp->format)));
 		tp->num_zero = ft_atoi(tp->to_arg);
 		tp->to_arg = "";

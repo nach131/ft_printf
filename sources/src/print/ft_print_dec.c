@@ -24,7 +24,8 @@ static void ft_putnbr_dec(int n, t_print *tp)
 	if (n < 0)
 	{
 		if (n == -2147483648)
-			ft_putstr("-2147483648", tp);
+			// ft_putstr("-2147483648", tp);
+			tp->to_prev = ft_strjoin(tp->to_prev, "-2147483648");
 		else
 		{
 			tp->to_prev = ft_strjoin(tp->to_prev, ft_char_to_str("-", 1));
@@ -53,7 +54,7 @@ void ft_print_dec(va_list arg, t_print *tp)
 	ft_putnbr_dec(d, tp);
 	if (tp->num_zero > ft_strlen(tp->to_prev))
 		{
-			write(1, "es", 2);
+			write(1, "es", 2); // esto no esta haciendo...
 		}
 	else 
 	{

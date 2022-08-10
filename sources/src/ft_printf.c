@@ -37,6 +37,7 @@ int ft_printf(const char *format, ...)
 		if (*tp.format == '%')
 		{
 			tp.format++;
+			tp.flag_percent = 1;
 			ft_search_arg(arg, &tp);
 		}
 		else

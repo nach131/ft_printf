@@ -37,13 +37,14 @@ printf("%d",ch);
 
 	next = "";
 	tp->widht = 0;
-	// if (tp->flag_zero)
-	// 	// ft_read_bonus(tp, arg);
-	// else if (*tp->format == '%')
-	// 	{
-	// 		tp->format++;
-	// 		ft_search_arg(arg, tp);
-	// 	}
+	if (tp->flag_zero)
+		ft_read_bonus(tp, arg);
+	else if (*tp->format == '%')
+		{
+			tp->format++;
+			
+			ft_search_arg(arg, tp);
+		}
 	while (*tp->format && *tp->format != '%')
 	{
 		tp->format++;
