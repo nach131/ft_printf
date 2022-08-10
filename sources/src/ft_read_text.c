@@ -27,16 +27,8 @@ void	ft_read_text(t_print *tp, va_list arg)
 
 	if (next)
 		widht = next - tp->format;
-	// else
-	// {
-	// 		widht = ft_strlen(tp->format);
-	// 	// creo que aki join resto...
-	// 	}
 	if (!tp->flag_percent)
 		tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(tp->format, widht));
-
-	// next = "";
-	// widht = 0;
 	if (tp->flag_zero)
 		ft_read_bonus(tp, arg);
 	else if (*tp->format == '%')
