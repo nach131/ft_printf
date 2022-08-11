@@ -32,10 +32,8 @@ static void ft_putnbr_dec(int n, t_print *tp)
 		else
 		{
 			// tp->to_prev = ft_strjoin(tp->to_prev, ft_char_to_str("-", 1));
-				tp->flag_negative = 1;
-			// tp->len -= 1;
+			tp->flag_negative = 1;
 			n = -n;
-			// 	ft_rep_write('0', tp);
 		}
 	}
 	if (n > 9)

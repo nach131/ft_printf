@@ -17,7 +17,16 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-void	ft_read_text(t_print *tp)
+// static void	no_coincide(t_print *tp, va_list arg)
+// {
+// 	while(tp->flag_percent)
+// 	{
+// 		ft_search_arg(arg, tp);
+// 		// ++tp->format;
+// 	}
+// }
+
+void	ft_read_text(t_print *tp, va_list arg)
 {
 
 	char *next;
@@ -28,7 +37,14 @@ void	ft_read_text(t_print *tp)
 	if (next)
 		widht = next - tp->format;
 	if (!tp->flag_percent)
-		tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(tp->format, widht));
+		{
+			if(!next)
+				widht = ft_strlen(tp->format);
+			tp->to_write = ft_strjoin(tp->to_write, ft_char_to_str(tp->format, widht));
+		}
+	else
+	 ft_search_arg(arg, tp);
+	// no_coincide(tp, arg);
 
 	
 	// else if (*tp->format == '%')

@@ -43,7 +43,7 @@ int ft_printf(const char *format, ...)
 		}
 		else
 		{
-			ft_read_text(&tp);
+			ft_read_text(&tp, arg);
 		}
 	}
 	va_end(arg);

@@ -24,25 +24,30 @@ void ft_search_bonus(t_print *tp, va_list arg)
 		ft_iszero_bonus(tp, arg);
 		// ft_read_text(tp, arg);
 	}
+	else if (*tp->format >= '1' && *tp->format <= '9')
+	{
+		// ft_iszero_bonus(tp, arg);
+		write(1, "es numero", 9);
+	}
 	else if (*tp->format == '-')
 	{
-		write(1, "-", 1);
+		write(1, "es -", 3);
 	}
 	else if (*tp->format == '.')
 	{
-		write(1, ".", 1);
+		write(1, "es .", 3);
 	}
 	else if (*tp->format == '#')
 	{
-		write(1, "#", 1);
+		write(1, "es #", 3);
 	}
 	else if (*tp->format == '+')
 	{
-		write(1, "+", 1);
+		write(1, "es +", 3);
 	}
 	else if (*tp->format == ' ')
 	{
-		write(1, " ", 1);
+		write(1, "es ", 3);
 	}
 	// tp->format++;
 }

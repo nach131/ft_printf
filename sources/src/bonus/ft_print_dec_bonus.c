@@ -19,13 +19,12 @@
 
 void ft_print_zeros(t_print *tp)
 {
- while(tp->num_zero)
- {
-	tp->to_write = ft_strjoin(tp->to_write, "0");
-	tp->num_zero--;
- }
+	while (tp->num_zero)
+	{
+		tp->to_write = ft_strjoin(tp->to_write, "0");
+		tp->num_zero--;
+	}
 }
-
 
 void ft_print_dec_bonus(t_print *tp)
 {
@@ -41,7 +40,11 @@ void ft_print_dec_bonus(t_print *tp)
 		tp->to_write = ft_strjoin(tp->to_write, tp->to_prev);
 	}
 	else
+	{
+		if (tp->flag_negative)
+			tp->to_write = ft_strjoin(tp->to_write, "-");
 		tp->to_write = ft_strjoin(tp->to_write, tp->to_prev);
+	}
 	tp->to_prev = "";
 	tp->flag_percent = 0;
 }

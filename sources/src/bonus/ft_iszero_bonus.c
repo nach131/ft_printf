@@ -42,5 +42,5 @@ void ft_iszero_bonus(t_print *tp, va_list arg)
 	while (*tp->format && *tp->format != 'd') // AKI LAS DEMAS...
 		tp->format++;
 	ft_search_arg(arg, tp); // encuentra arg
-	ft_read_text(tp); // tiene seguir con lo que le queda si no vuelve a search_bonus
+	ft_read_text(tp, arg); // tiene seguir con lo que le queda si no vuelve a search_bonus
 }
