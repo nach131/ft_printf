@@ -23,6 +23,7 @@ typedef struct s_print
 	int		flag_error;
 	int		flag_zero;
 	int		flag_percent;
+	int		flag_negative;
 	int		num_zero;
 	char	*to_write;
 	char	*to_arg;

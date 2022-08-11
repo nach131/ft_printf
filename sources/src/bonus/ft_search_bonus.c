@@ -20,7 +20,6 @@ void ft_search_bonus(t_print *tp, va_list arg)
 {
 	if (*tp->format == '0')
 	{
-		write(1, "0", 1);
 		tp->flag_zero = 1;
 		ft_iszero_bonus(tp, arg);
 		// ft_read_text(tp, arg);

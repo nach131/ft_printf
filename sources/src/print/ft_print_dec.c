@@ -24,11 +24,15 @@ static void ft_putnbr_dec(int n, t_print *tp)
 	if (n < 0)
 	{
 		if (n == -2147483648)
-			// ft_putstr("-2147483648", tp);
-			tp->to_prev = ft_strjoin(tp->to_prev, "-2147483648");
+			{
+				// tp->to_prev = ft_strjoin(tp->to_prev, "-2147483648");
+				tp->to_prev = ft_strjoin(tp->to_prev, "2147483648");
+				tp->flag_negative = 1;
+			}
 		else
 		{
-			tp->to_prev = ft_strjoin(tp->to_prev, ft_char_to_str("-", 1));
+			// tp->to_prev = ft_strjoin(tp->to_prev, ft_char_to_str("-", 1));
+				tp->flag_negative = 1;
 			// tp->len -= 1;
 			n = -n;
 			// 	ft_rep_write('0', tp);

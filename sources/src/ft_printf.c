@@ -28,6 +28,7 @@ int ft_printf(const char *format, ...)
 	tp.flag_percent = 0;
 	tp.flag_error = 0;
 	tp.flag_zero = 0;
+	tp.flag_negative = 0;
 	tp.num_zero = 0;
 	tp.to_arg = "";
 	tp.to_write = "";

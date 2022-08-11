@@ -17,16 +17,31 @@
 #include "ft_printf.h"
 #include "libft.h"
 
+void ft_print_zeros(t_print *tp)
+{
+ while(tp->num_zero)
+ {
+	tp->to_write = ft_strjoin(tp->to_write, "0");
+	tp->num_zero--;
+ }
+}
+
+
 void ft_print_dec_bonus(t_print *tp)
 {
+	int len;
+
 	if (tp->num_zero > ft_strlen(tp->to_prev))
 	{
-		write(1, "es", 2); // esto no esta haciendo...
-	}
-	else
-	{
+		len = ft_strlen(tp->to_prev);
+		tp->num_zero -= len + tp->flag_negative;
+		if (tp->flag_negative)
+			tp->to_write = ft_strjoin(tp->to_write, "-");
+		ft_print_zeros(tp);
 		tp->to_write = ft_strjoin(tp->to_write, tp->to_prev);
 	}
+	else
+		tp->to_write = ft_strjoin(tp->to_write, tp->to_prev);
 	tp->to_prev = "";
 	tp->flag_percent = 0;
 }
