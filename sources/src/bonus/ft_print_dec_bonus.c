@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_dec.c                                     :+:      :+:    :+:   */
+/*   ft_print_dec_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 19:12:40 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/07/30 15:51:12 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/08/11 06:33:06 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/08/11 06:33:09 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,38 +17,16 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-static void ft_putnbr_dec(int n, t_print *tp)
+void ft_print_dec_bonus(t_print *tp)
 {
-	char number;
-
-	if (n < 0)
+	if (tp->num_zero > ft_strlen(tp->to_prev))
 	{
-		if (n == -2147483648)
-			// ft_putstr("-2147483648", tp);
-			tp->to_prev = ft_strjoin(tp->to_prev, "-2147483648");
-		else
-		{
-			tp->to_prev = ft_strjoin(tp->to_prev, ft_char_to_str("-", 1));
-			// tp->len -= 1;
-			n = -n;
-			// 	ft_rep_write('0', tp);
-		}
+		write(1, "es", 2); // esto no esta haciendo...
 	}
-	if (n > 9)
-		ft_putnbr_dec(n / 10, tp);
-	if (n != -2147483648)
+	else
 	{
-		number = '0' + n % 10;
-		tp->to_prev = ft_strjoin(tp->to_prev, ft_char_to_str(&number, 1));
+		tp->to_write = ft_strjoin(tp->to_write, tp->to_prev);
 	}
-}
-
-void ft_print_dec(va_list arg, t_print *tp)
-{
-	int d;
-
-	d = va_arg(arg, int);
-	ft_putnbr_dec(d, tp);
-	ft_print_dec_bonus(tp);
-	tp->format++;
+	tp->to_prev = "";
+	tp->flag_percent = 0;
 }

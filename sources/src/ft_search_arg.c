@@ -37,6 +37,6 @@ void ft_search_arg(va_list arg, t_print *tp)
 	// 	ft_print_hex(arg, tp, "0123456789ABCDEF");
 	else 
 		ft_search_bonus(tp, arg);
-	tp->format++;
+	// tp->format++; // sumo dentro de cada print
 	// return (tp->format);
 }
