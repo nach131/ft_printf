@@ -7,16 +7,7 @@
 		{
 			"type": "lldb",
 			"request": "launch",
-			"name": "Debug lldb",
-			"program": "${workspaceFolder}/test/a.out",
-			"args": [],
-			"stopOnEntry": false,
-			"cwd": "${workspaceFolder}/test"
-		},
-		{
-			"type": "lldb",
-			"request": "launch",
-			"name": "lldb active file nach131",
+			"name": "lldb active file",
 			"program": "${fileDirname}/${fileBasenameNoExtension}.out",
 			"args": [],
 			"stopOnEntry": false,

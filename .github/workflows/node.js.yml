@@ -7,7 +7,8 @@ name: Node.js CI
 #on: push
 on:
   schedule:
-  - cron: "00 22,10 * * *"
+  # - cron: "00 22,10 * * *"
+  - cron: "00 22 * * *"
 env:
   SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
