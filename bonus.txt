@@ -1,0 +1,10 @@
+-0.
+# +
+
++ ----- d,i
+0 ----- d,i,u,x,X
+. ----- s,d,i,u,x,X
+minus - c,s,p,d,i,u,x,X
+# ----- x,X
+space - s,d,i
+

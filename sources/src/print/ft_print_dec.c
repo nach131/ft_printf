@@ -24,16 +24,10 @@ static void	ft_putnbr_dec(int n, t_print *tp)
 			ft_putstr("-2147483648", tp);
 		else
 		{
-			// aki los ceros
-				ft_write('-', tp);
-				tp->len -= 1;
-				n = -n;
-			// if(tp->num_zero)
-			// 	ft_rep_write('0', tp);
+			ft_write('-', tp);
+			n = -n;
 		}	
 	}
-	if(tp->num_zero)	
-			ft_rep_write('0', tp);
 	if (n > 9)
 		ft_putnbr_dec(n / 10, tp);
 	if (n != -2147483648)

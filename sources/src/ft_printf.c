@@ -25,10 +25,6 @@ int	ft_printf(const char *format, ...)
 	tp.len = 0;
 	tp.widht = 0;
 	tp.error = 0;
-	tp.zero = 0;
-	tp.num_zero = 0;
-	tp.to_arg = "";
-	tp.to_write = "";
 	while (*format)
 	{
 		if (*format == '%')
@@ -40,7 +36,7 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{		
-			format = ft_read_text(&tp, format, arg);
+			format = ft_read_text(&tp, format);
 			if (!tp.error)
 				tp.len += tp.widht;
 		}

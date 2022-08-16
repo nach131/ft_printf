@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus.c                                            :+:      :+:    :+:   */
+/*   ft_search_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/06 19:08:39 by nmota-bu          #+#    #+#             */
-/*   Updated: 2022/08/06 19:09:05 by nmota-bu         ###   ########.fr       */
+/*   Created: 2022/08/10 23:54:54 by nmota-bu          #+#    #+#             */
+/*   Updated: 2022/08/10 23:54:55 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,38 @@
 
 #include "ft_printf.h"
 
-void	ft_rep_write(char ch, t_print *tp)
+void ft_search_bonus(va_list arg, const char *format, t_print *tp)
 {
-	while (tp->num_zero)
-		{
-			ft_write(ch, tp);
-			tp->num_zero -= 1;
-		}
+	if (*format == '0')
+	{
+		tp->flag_zero = 1;
+		ft_iszero_bonus(tp, arg);
+		// ft_read_text(tp, arg);
+	}
+	else if (*format >= '1' && *format <= '9')
+	{
+		// ft_iszero_bonus(tp, arg);
+		write(1, "es numero", 9);
+	}
+	else if (*format == '-')
+	{
+		write(1, "es -", 3);
+	}
+	else if (*format == '.')
+	{
+		write(1, "es .", 3);
+	}
+	else if (*format == '#')
+	{
+		write(1, "es #", 3);
+	}
+	else if (*format == '+')
+	{
+		write(1, "es +", 3);
+	}
+	else if (*format == ' ')
+	{
+		write(1, "es ", 3);
+	}
+	// tp->format++;
 }
-
-
-// void	ft_rep_write(char ch, size_t n, t_print *tp)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	while (i < n)
-// 	{	
-// 		ft_write(ch, tp);
-// 		i++;
-// 	}
-// }
-
-// int	main(void)
-// {
-// 	super_write('0', 120);
-// }

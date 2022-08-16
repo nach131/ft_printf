@@ -7,10 +7,10 @@
 
 int	main()
 {
-	printf("-------	d T23------\n");
-	int dec_23_1 = ft_printf("aki%02daki\n",-42);
-	// int dec_23_2 = printf("%aki02daki\n",-42);
+	// printf("-------	------\n");
+	int dec_23_1 = ft_printf(" %#x ", 100);
+	// int dec_23_2 = printf(" %#x ", 100);
 	// printf("\ndec_23_1 = %d\ndec_23_2 = %d\n", dec_23_1, dec_23_2);
-	printf("-------------\n");
+	// printf("-------------\n");
 }
 
