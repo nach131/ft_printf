@@ -5,8 +5,8 @@
 </h1>
 
  <p align="center">
-<img alt="total-views" src="https://img.shields.io/badge/views-370-blue">
-<img alt="total-clone" src="https://img.shields.io/badge/clone-171-blue">
+<img alt="total-views" src="https://img.shields.io/badge/views-233-blue">
+<img alt="total-clone" src="https://img.shields.io/badge/clone-175-blue">
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/nach131/ft_printf">
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/nach131/ft_printf">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/nach131/ft_printf">
