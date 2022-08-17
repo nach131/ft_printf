@@ -54,7 +54,7 @@ all: DIR LIBFS $(NAME)
 LIBFS:
 			@make -C $(LIBFT)
 
-$(NAME) : $(OBJS)
+$(NAME) : $(OBJS) $(LIBFT)/libft.a
 			@cp libft/libft.a .
 			@mv libft.a $(NAME)
 			@$(AR) $(NAME) $(OBJS)
