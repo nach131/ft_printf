@@ -5,15 +5,18 @@
 </h1>
 
  <p align="center">
+<!-- these values are automatically generated with github actions and github api -->
 <img alt="total-views" src="https://img.shields.io/badge/views-total_views-blue">
 <img alt="total-clone" src="https://img.shields.io/badge/clone-total_clone-blue">
+<!-- buy me a coffee if you want to know how -->
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/nach131/ft_printf">
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/nach131/ft_printf">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/nach131/ft_printf">
 <img alt="license-MIT" src="https://img.shields.io/badge/license-MIT-blue">
 </p>
-
-<!-- ![libft](https://github.com/nach131/42Barcelona/blob/main/images/125.png) -->
+<span align="center">
+![libft](https://github.com/nach131/42Barcelona/blob/main/images/100.png)
+</span>
 
 <h3 align="center">Write protected</h3>
 
