@@ -15,11 +15,10 @@
 <img alt="license-MIT" src="https://img.shields.io/badge/license-MIT-blue">
 </p>
 
-<h3 align="center">
-	![libft](https://github.com/nach131/42Barcelona/blob/main/images/100.png)
-</h3>
+<span align="center">
 	
-<h3 align="center">Write protected</h3>
+![](https://github.com/nach131/42Barcelona/blob/main/images/100.png)
+</span>
 
 ## Synopsis
 
@@ -33,15 +32,15 @@ Ahí es cuando ocurre la magia: el siguiente argumento en la lista de argumentos
 
 %  | type |
 ---|------|
-%c | character				|
-%s | string					|
-%p | pointer				|
+%c | character			|
+%s | string			|
+%p | pointer			|
 %d | decimal signed integer	|
-%i | integer				|
+%i | integer			|
 %u | unsigned integer		|
-%x | hex integer (lowercase)|
-%X | hex integer (uppercase)|
-%% | just the %				|
+%x | hex integer (lowercase)	|
+%X | hex integer (uppercase)	|
+%% | just the %			|
 </div>
 
 ![](Mapa%20conceptual.png)
