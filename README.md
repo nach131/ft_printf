@@ -15,7 +15,9 @@
 <img alt="license-MIT" src="https://img.shields.io/badge/license-MIT-blue">
 </p>
 
-<h3 align="center">![libft](https://github.com/nach131/42Barcelona/blob/main/images/100.png)</h3>
+<h3 align="center">
+	![libft](https://github.com/nach131/42Barcelona/blob/main/images/100.png)
+</h3>
 	
 <h3 align="center">Write protected</h3>
 
