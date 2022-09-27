@@ -24,7 +24,9 @@
 
 ## Synopsis
 
+```c
 	int printf(const char *format, ...);
+```
 
 La forma más fácil de mirar la cadena de formato es que imprimirá todo en la cadena tal como está, a menos que un carácter tenga un signo de porcentaje **(%)** delante de él.
 
