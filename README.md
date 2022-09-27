@@ -6,8 +6,8 @@
 
  <p align="center">
 <!-- these values are automatically generated with github actions and github api -->
-<img alt="total-views" src="https://img.shields.io/badge/views-304-blue">
-<img alt="total-clone" src="https://img.shields.io/badge/clone-100-blue">
+<img alt="total-views" src="https://img.shields.io/badge/views-46-blue">
+<img alt="total-clone" src="https://img.shields.io/badge/clone-2-blue">
 <!-- buy me a coffee if you want to know how -->
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/nach131/ft_printf">
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/nach131/ft_printf">
@@ -24,7 +24,9 @@
 
 ## Synopsis
 
+```c
 	int printf(const char *format, ...);
+```
 
 La forma más fácil de mirar la cadena de formato es que imprimirá todo en la cadena tal como está, a menos que un carácter tenga un signo de porcentaje **(%)** delante de él.
 
