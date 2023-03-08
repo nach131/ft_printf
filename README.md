@@ -6,7 +6,7 @@
 
  <p align="center">
 <!-- these values are automatically generated with github actions and github api -->
-<img alt="total-views" src="https://img.shields.io/badge/views-47-blue">
+<img alt="total-views" src="https://img.shields.io/badge/views-51-blue">
 <img alt="total-clone" src="https://img.shields.io/badge/clone-45-blue">
 <!-- buy me a coffee if you want to know how -->
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/nach131/ft_printf">
