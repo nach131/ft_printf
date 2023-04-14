@@ -6,14 +6,15 @@
 
  <p align="center">
 <!-- these values are automatically generated with github actions and github api -->
-<img alt="total-views" src="https://img.shields.io/badge/views-7-blue">
-<img alt="total-clone" src="https://img.shields.io/badge/clone-41-blue">
+<img alt="total-views" src="https://img.shields.io/badge/views-18-blue">
+<img alt="total-clone" src="https://img.shields.io/badge/clone-39-blue">
 <!-- buy me a coffee if you want to know how -->
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/nach131/ft_printf">
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/nach131/ft_printf">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/nach131/ft_printf">
 <img alt="license-MIT" src="https://img.shields.io/badge/license-MIT-blue">
 </p>
+
 <span align="center">
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=nach131.ft_printf&left_color=green&right_color=blue)
